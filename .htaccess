@@ -1,0 +1,26 @@
+#add handler that allows html, xml, and json to work dynamically as PHP
+#https://httpd.apache.org/docs/current/mod/mod_mime.html#addtype
+#https://httpd.apache.org/docs/current/mod/mod_mime.html#addhandler
+#AddType application/x-httpd-php .html .xml .json
+AddHandler php5-script .html .xml .json
+
+#serve all resources labeled as 'text/html' or 'text/plain' with the media type 'charset' parameter set to UTF-8'
+#https://httpd.apache.org/docs/current/mod/core.html#adddefaultcharset
+AddDefaultCharset utf-8
+
+#serve correct media type (MIME type) for resources
+#https://httpd.apache.org/docs/current/mod/mod_mime.html#addtype
+AddType application/atom+xml .atom
+AddType application/json .json
+AddType application/ld+json .jsonld
+AddType application/rss+xml .rss
+AddType application/xml .rdf .xml
+AddType application/vnd.ms-fontobject .eot
+AddType application/x-font-ttf .ttc .ttf
+AddType font/ttf .ttf
+AddType font/opentype .otf
+AddType font/otf .otf
+AddType application/font-woff .woff
+AddType font/x-woff .woff
+AddType application/font-woff2 .woff2
+AddType image/svg+xml .svg
