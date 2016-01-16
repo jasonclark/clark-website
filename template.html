@@ -194,19 +194,19 @@ header button.small,
 </nav>
 </div>
 </header>
-<main role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">>
+<main role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
 <div class="content">
 <div class="about">
-	<h1>About Jason A. Clark</h1>
+	<h1 property="name">About Jason A. Clark</h1>
 	<h2>Hi. I'm Jason.</h2>
 	<figure class="center">	
 		<picture>		
 		<source media="all and (min-width: 50.1em)" srcset="" />
 		<source media="all and (max-width:30.063em)" srcset="" />		
-		<img class="circle" src="https://www.lib.montana.edu/~jason/meta/img/portrait.jpg" alt="Jason A. Clark" width="150" height="150">
+		<img class="circle" property="image" src="https://www.lib.montana.edu/~jason/meta/img/portrait.jpg" alt="Jason A. Clark" width="150" height="150">
 		</picture>
 	</figure>
-	<p>As the Head of Library Informatics &amp; Computing, I build and direct the digital branch of the Montana State University (MSU) Library. In my work, I have focused on semantic web development, digital library development, metadata and data modeling, web services and APIs, search engine optimization, and interface design.</p>
+	<p property="description">As the Head of Library Informatics &amp; Computing, I build and direct the digital branch of the Montana State University (MSU) Library. In my work, I have focused on semantic web development, digital library development, metadata and data modeling, web services and APIs, search engine optimization, and interface design.</p>
 	<p>Before coming to MSU, I became interested in the intersection between libraries and technology while working as a web developer for the Division of Information Technology at the University of Wisconsin. After two years, I moved on to work as the web services librarian at Williams College Libraries.</p>
 	<p>I really enjoy teaching and speaking about what I do. I try to publish my thoughts whenever I can and have even written some books.
 	<ul class="center none">
@@ -225,7 +225,7 @@ header button.small,
 		<a href="">Search</a> | <a href="">Feed</a>
 	</p>
 	<p class="center">
-		&copy; <a href="https://plus.google.com/103883366387427181221?rel=author">Jason A. Clark</a>
+		&copy; <a href="https://plus.google.com/103883366387427181221?rel=author" property="creator">Jason A. Clark</a>
 	</p>
 </footer>
 </div>
