@@ -187,10 +187,10 @@ header button.small,
 <header role="banner">
 <div class="container">
 <h1 class="site-title"><a href="/">Jason A. Clark</a></h1>
-<nav class="nav" role="navigation">
-	<a href="/about" class="content-link">about</a>
-	<a href="/talks" class="content-link">talks</a>
-	<a href="/code" class="content-link">code</a>
+<nav class="nav" role="navigation" typeof="SiteNavigationElement" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#nav">
+	<a class="content-link" property="name url" href="/about">about</a>
+	<a class="content-link" property="name url" href="/talks">talks</a>
+	<a class="content-link" property="name url" href="/code">code</a>
 </nav>
 </div>
 </header>
@@ -225,7 +225,7 @@ header button.small,
 		<a href="">Search</a> | <a href="">Feed</a>
 	</p>
 	<p class="center">
-		&copy; <a href="https://plus.google.com/103883366387427181221?rel=author" property="creator">Jason A. Clark</a>
+		&copy; <a property="creator" href="https://plus.google.com/103883366387427181221?rel=author">Jason A. Clark</a>
 	</p>
 </footer>
 </div>
