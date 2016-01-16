@@ -9,7 +9,7 @@ $fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER
 $fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
 ?>
 <!doctype html>
-<html lang="en-us" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
+<html lang="en-us" id="page" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -188,14 +188,14 @@ header button.small,
 <header role="banner">
 <div class="container">
 <h1 class="site-title"><a href="/">Jason A. Clark</a></h1>
-<nav class="nav" role="navigation" typeof="SiteNavigationElement" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#nav">
+<nav class="nav" id="nav" role="navigation" typeof="SiteNavigationElement" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#nav">
 	<a class="content-link" property="name url" href="/about">about</a>
 	<a class="content-link" property="name url" href="/talks">talks</a>
 	<a class="content-link" property="name url" href="/code">code</a>
 </nav>
 </div>
 </header>
-<main role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
+<main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
 <div class="content" property="text">
 <div class="about">
 	<h1 property="name">About Jason A. Clark</h1>
