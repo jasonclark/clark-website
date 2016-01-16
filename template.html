@@ -195,7 +195,7 @@ header button.small,
 </div>
 </header>
 <main role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
-<div class="content">
+<div class="content" property="text">
 <div class="about">
 	<h1 property="name">About Jason A. Clark</h1>
 	<h2>Hi. I'm Jason.</h2>
@@ -203,10 +203,10 @@ header button.small,
 		<picture>		
 		<source media="all and (min-width: 50.1em)" srcset="" />
 		<source media="all and (max-width:30.063em)" srcset="" />		
-		<img class="circle" property="image" src="https://www.lib.montana.edu/~jason/meta/img/portrait.jpg" alt="Jason A. Clark" width="150" height="150">
+		<img class="circle" property="image primaryImageOfPage" src="https://www.lib.montana.edu/~jason/meta/img/portrait.jpg" alt="Jason A. Clark" width="150" height="150">
 		</picture>
 	</figure>
-	<p property="description">As the Head of Library Informatics &amp; Computing, I build and direct the digital branch of the Montana State University (MSU) Library. In my work, I have focused on semantic web development, digital library development, metadata and data modeling, web services and APIs, search engine optimization, and interface design.</p>
+	<p property="about description">As the Head of Library Informatics &amp; Computing, I build and direct the digital branch of the Montana State University (MSU) Library. In my work, I have focused on semantic web development, digital library development, metadata and data modeling, web services and APIs, search engine optimization, and interface design.</p>
 	<p>Before coming to MSU, I became interested in the intersection between libraries and technology while working as a web developer for the Division of Information Technology at the University of Wisconsin. After two years, I moved on to work as the web services librarian at Williams College Libraries.</p>
 	<p>I really enjoy teaching and speaking about what I do. I try to publish my thoughts whenever I can and have even written some books.
 	<ul class="center none">
@@ -215,7 +215,7 @@ header button.small,
 	</ul>
 	</p>
 	<p>When I don't have metadata on the brain, I like to hike the mountains of Montana with my wife, our daughter, and our furry family member.</p>
-	<p class="center"><a href="https://twitter.com/jaclark" class="button small">@jaclark</a> <a href="https://github.com/jasonclark" class="button small">github</a> <a href="" class="button small">feed</a></p>
+	<p class="center"><a class="button small" property="significantLink" href="https://twitter.com/jaclark">@jaclark</a> <a class="button small" property="significantLink" href="https://github.com/jasonclark">github</a> <a class="button small" property="significantLink" href="">feed</a></p>
 </div>
 </div>
 </main>
@@ -225,7 +225,7 @@ header button.small,
 		<a href="">Search</a> | <a href="">Feed</a>
 	</p>
 	<p class="center">
-		&copy; <a property="creator" href="https://plus.google.com/103883366387427181221?rel=author">Jason A. Clark</a>
+		&copy; <a property="author creator" href="https://plus.google.com/103883366387427181221?rel=author">Jason A. Clark</a>
 	</p>
 </footer>
 </div>
