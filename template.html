@@ -9,7 +9,7 @@ $fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER
 $fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
 ?>
 <!doctype html>
-<html lang="en-us" id="page" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
+<html lang="en-US" id="page" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -204,7 +204,7 @@ header button.small,
 		<picture>		
 		<source media="all and (min-width: 50.1em)" srcset="" />
 		<source media="all and (max-width:30.063em)" srcset="" />		
-		<img class="circle" property="image primaryImageOfPage" src="https://www.lib.montana.edu/~jason/meta/img/portrait.jpg" alt="Jason A. Clark" width="150" height="150">
+		<img class="circle" property="image" src="https://www.lib.montana.edu/~jason/meta/img/portrait.jpg" alt="Jason A. Clark" width="150" height="150">
 		</picture>
 	</figure>
 	<p property="about description">As the Head of Library Informatics &amp; Computing, I build and direct the digital branch of the Montana State University (MSU) Library. In my work, I have focused on semantic web development, digital library development, metadata and data modeling, web services and APIs, search engine optimization, and interface design.</p>
