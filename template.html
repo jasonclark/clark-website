@@ -19,10 +19,10 @@ $pageDescription = 'ADD PAGE DESCRIPTION for use in <meta> description and og:de
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>jasonclark.info</title>
-<meta name="description" content="Jason A. Clark's home page includes his resume, samples of his projects, working code for sample applications, talks, and publications."/>
-<meta property="og:title" content="About - Jason A. Clark"/>
-<meta property="og:description" content="Jason A. Clark's home page includes his resume, samples of his projects, working code for sample applications, talks, and publications."/>
+<title><?php echo $pageTitle; ?></title>
+<meta name="description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:title" content="<?php echo $pageTitle; ?>"/>
+<meta property="og:description" content="<?php echo $pageDescription; ?>"/>
 <meta property="og:image" content="https://www.lib.montana.edu/~jason/meta/img/clark-share-default.png"/>
 <meta property="og:url" content="https://www.lib.montana.edu/~jason/"/>
 <meta property="og:type" content="website"/>
