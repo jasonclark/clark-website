@@ -107,6 +107,7 @@ samp {
 	font-size: 1em;
 }
 */
+time[title],time[title]:active,time[title]:focus{cursor:help;}
 button,input,optgroup,select,textarea{color:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;font-size:inherit;line-height:inherit;font-family:inherit;margin:0;}
 button{overflow:visible;}
 button,select{text-transform:none;}
@@ -195,6 +196,7 @@ header button.small,
 	header {height:70px;padding:3px 0;text-align:center;}
 	header .nav {float:none;display:block;}
 	.content {min-width:95%;}
+	.list {text-align:left;}
 }
 </style>
 </head>
@@ -225,7 +227,7 @@ header button.small,
 	<p property="about description">As the Head of Library Informatics &amp; Computing, I build and direct the digital branch of the Montana State University (MSU) Library. In my work, I have focused on semantic web development, digital library development, metadata and data modeling, web services and APIs, search engine optimization, and interface design.</p>
 	<p>Before coming to MSU, I became interested in the intersection between libraries and technology while working as a web developer for the Division of Information Technology at the University of Wisconsin. After two years, I moved on to work as the web services librarian at Williams College Libraries.</p>
 	<p>I really enjoy teaching and speaking about what I do. I try to publish my thoughts whenever I can and have even written some books.
-	<ul class="center none">
+	<ul class="list center none">
 		<li><a rel="nofollow" href="http://www.amazon.com/gp/product/1555707831/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1555707831&linkCode=as2&tag=jasonclarki0f-20&linkId=GISL5OYLQQPMRGCH">Building Mobile Library Applications</a></li>
 		<li><a rel="nofollow" href="http://www.amazon.com/gp/product/1442243694/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1442243694&linkCode=as2&tag=jasonclarki0f-20&linkId=6OTRZ4RYPERPS55Q">Responsive Web Design in Practice</a></li>
 	</ul>
@@ -241,7 +243,7 @@ header button.small,
 		<a property="relatedLink" href="search.html">Search</a> | <a property="relatedLink" href="http://feeds.feedburner.com/diginit">Feed</a>
 	</p>
 	<p class="center">
-		&copy; <time property="dateModified lastReviewed" datetime="<?php echo $pageLastModified; ?>"><?php echo date('Y'); ?></time> <a property="author creator copyrightHolder" href="https://plus.google.com/103883366387427181221?rel=author">Jason A. Clark</a>
+		&copy; <time property="dateModified lastReviewed" datetime="<?php echo $pageLastModified; ?>" title="published <?php echo $pageLastModified; ?>"><?php echo date('Y'); ?></time> <a property="author creator copyrightHolder" href="https://plus.google.com/103883366387427181221?rel=author">Jason A. Clark</a>
 	</p>
 </footer>
 </div>
