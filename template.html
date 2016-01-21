@@ -36,12 +36,17 @@ $pageDescription = 'ADD PAGE DESCRIPTION for use in <meta> description and og:de
 <style>
 html {box-sizing:border-box;}
 *, *:before, *:after {box-sizing:inherit;}
-html,body{font-style:normal;font-variant:normal;font-stretch:normal;font-size:/*18px*/100%;line-height:1.5;font-family:'Open Sans', 'Helvetica Neue', Helvetica, arial, sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:400;width:100%;height:100%;margin:0;padding:0;/*overflow: hidden;*/background-color:#f8f8f6;}
+html,body{font-style:normal;font-variant:normal;font-stretch:normal;font-size:/*18px*/100%;line-height:1.5;font-family:'Open Sans', 'Helvetica Neue', Helvetica, arial, sans-serif;color:/*#444*/#333;-webkit-font-smoothing:antialiased;font-weight:400;width:100%;height:100%;margin:0;padding:0;/*overflow: hidden;*/background-color:#f8f8f6;}
 /*html,body{font-style:normal;font-variant:normal;font-stretch:normal;font-size:100%;line-height:1.5;font-family:'Source Sans Pro', 'Helvetica Neue', Helvetica, arial, sans-serif;color:#444;-webkit-font-smoothing:antialiased;font-weight:300;width:100%;height:100%;margin:0;padding:0;background-color:#f8f8f6;}*/
-a{text-decoration:none;color:#555;}
-a:hover,a:focus{color:#000;}
+
+a,a:visited{color:#08c;text-decoration:none;word-wrap:break-word;}
+a:active,a:focus,a:hover{color:#005580;text-decoration:underline;outline:0;}
+/*a{text-decoration:none;color:#555;}
+a:hover,a:focus{color:#000;}*/
 a{background-color:transparent;}
-a:active,a:hover{outline:0;}
+.site-title a{color:#333;}
+/*a:active,a:hover{outline:0;}*/
+
 a,button,input,select,textarea,label,summary{touch-action:manipulation;}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block;}
 audio,canvas,progress,video{display:inline-block;vertical-align:baseline;}
