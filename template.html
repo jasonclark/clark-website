@@ -12,6 +12,8 @@ $fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXT
 $pageTitle = 'ADD PAGE TITLE for use in <title> and og:title tags';
 //assign value for description of page, limit to 155 charcters
 $pageDescription = 'ADD PAGE DESCRIPTION for use in <meta> description and og:description tags';
+//get file last modified date for use in Schema.org date properties
+$pageLastModified = date ('c', getlastmod());
 ?>
 <!doctype html>
 <html lang="en-US" id="page" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
@@ -239,7 +241,7 @@ header button.small,
 		<a property="relatedLink" href="search.html">Search</a> | <a property="relatedLink" href="http://feeds.feedburner.com/diginit">Feed</a>
 	</p>
 	<p class="center">
-		&copy; <time datetime="<?php echo date('c'); ?>"><?php echo date('Y'); ?></time> <a property="author creator copyrightHolder" href="https://plus.google.com/103883366387427181221?rel=author">Jason A. Clark</a>
+		&copy; <time property="dateModified lastReviewed" datetime="<?php echo $pageLastModified; ?>"><?php echo date('Y'); ?></time> <a property="author creator copyrightHolder" href="https://plus.google.com/103883366387427181221?rel=author">Jason A. Clark</a>
 	</p>
 </footer>
 </div>
