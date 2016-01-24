@@ -53,7 +53,7 @@ $pageLastModified = date ('c', getlastmod());
 <main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
 <div class="content" property="text">
 <section>
-	<h1 property="alternativeHeadline name">About Jason A. Clark</h1>
+	<h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
 	<h2>Hi. I'm Jason.</h2>
 	<figure class="center">	
 		<picture>		
