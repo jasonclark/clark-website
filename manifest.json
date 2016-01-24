@@ -1,0 +1,21 @@
+{
+	"default_locale": "en",
+	"lang": "en",
+	"background_color": "#f8f8f6",
+	"name": "Jason A. Clark",
+	"short_name": "ClarkWeb",
+	"description": "Jason A. Clark's website includes his resume, samples of his projects, working code for sample applications, talks, and publications.",
+	"developer": {
+		"name": "Jason A. Clark",
+		"url": "http://www.jasonclark.info"
+	},
+	"display": "standalone",
+	"start_url": "./index.html",
+	"icons": [
+		{
+		"src": "./meta/img/manifest.png",
+		"sizes": "320x220",
+		"type": "image/png"
+		}
+	]
+}
