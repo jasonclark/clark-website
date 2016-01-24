@@ -16,7 +16,7 @@ $pageDescription = 'ADD PAGE DESCRIPTION for use in <meta> description and og:de
 $pageLastModified = date ('c', getlastmod());
 ?>
 <!doctype html>
-<html lang="en-US" id="page" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
+<html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
