@@ -2,7 +2,8 @@
 #https://httpd.apache.org/docs/current/mod/mod_mime.html#addtype
 #https://httpd.apache.org/docs/current/mod/mod_mime.html#addhandler
 #AddType application/x-httpd-php .html .xml .json
-AddHandler php5-script .html .xml .json
+AddHandler php5-script .html .xml
+#AddHandler php5-script .html .xml .json
 
 #serve all resources labeled as 'text/html' or 'text/plain' with the media type 'charset' parameter set to UTF-8'
 #https://httpd.apache.org/docs/current/mod/core.html#adddefaultcharset
@@ -10,6 +11,9 @@ AddDefaultCharset utf-8
 
 #serve correct media type (MIME type) for resources
 #https://httpd.apache.org/docs/current/mod/mod_mime.html#addtype
+<Files "manifest.json">
+AddType application/manifest+json .json
+</Files>
 AddType application/atom+xml .atom
 AddType application/json .json
 AddType application/ld+json .jsonld
@@ -28,5 +32,5 @@ AddType image/svg+xml .svg
 #compress html, css, javascript, font, and miscellaneous resources
 #https://httpd.apache.org/docs/current/mod/mod_deflate.html
 <IfModule mod_deflate.c>
-AddOutputFilterByType DEFLATE "text/css" "text/html" "text/javascript" "text/plain" "text/xml" "application/x-javascript" "application/javascript" "application/json" "application/ld+json" "application/rdf+xml" "application/rss+xml" "application/x-font-woff" "application/x-font-ttf" "application/vnd.ms-fontobject" "font/eot" "font/opentype" "font/otf" "font/ttf" "font/x-woff" "image/bmp" "image/jpeg" "image/svg+xml" "image/vnd.microsoft.icon" "image/x-icon" 
+AddOutputFilterByType DEFLATE "text/css" "text/html" "text/javascript" "text/plain" "text/xml" "application/x-javascript" "application/javascript" "application/json" "application/ld+json" "application/manifest+json" "application/rdf+xml" "application/rss+xml" "application/x-font-woff" "application/x-font-ttf" "application/vnd.ms-fontobject" "font/eot" "font/opentype" "font/otf" "font/ttf" "font/x-woff" "image/bmp" "image/jpeg" "image/svg+xml" "image/vnd.microsoft.icon" "image/x-icon" 
 </IfModule>
