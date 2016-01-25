@@ -9,9 +9,9 @@ $fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER
 $fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
 
 //assign value for title of page, limit to 60-70 characters
-$pageTitle = 'ADD PAGE TITLE for use in <title> and og:title tags';
+$pageTitle = 'ADD PAGE TITLE for use in title and og:title tags';
 //assign value for description of page, limit to 155 charcters
-$pageDescription = 'ADD PAGE DESCRIPTION for use in <meta> description and og:description tags';
+$pageDescription = 'ADD PAGE DESCRIPTION for use in meta description and og:description tags';
 //get file last modified date for use in Schema.org date properties
 $pageLastModified = date ('c', getlastmod());
 ?>
