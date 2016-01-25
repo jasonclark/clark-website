@@ -1,61 +1,102 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
-						http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-  <loc>http://www.lib.montana.edu/~jason/</loc>
+﻿<?php
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//assign value for title of page, limit to 60-70 characters
+$pageTitle = 'Sitemap - Jason A. Clark';
+//assign value for description of page, limit to 155 charcters
+$pageDescription = 'Sitemap for website of Jason A. Clark';
+//get file last modified date for use in RFC 822 date properties
+$pageLastModified = date ('r', getlastmod());
+
+//set XML header content type and XML opening tag
+header('Content-Type: application/rss+xml');
+echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
+?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title><?php echo $pageTitle; ?></title>
+<link><?php echo $protocol.$server.$path.'/'; ?></link>
+<description><?php echo $pageDescription; ?></description>
+<atom:link href="<?php echo $protocol.$server.$path.'/'.$fileName; ?>" rel="self" type="application/rss+xml"/>
+<lastBuildDate><?php echo $pageLastModified; ?></lastBuildDate>
+<item>
+  <title>Home</title>
+  <description>Home page for Jason A. Clark's website</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?></link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?></guid>
   <priority>1.0</priority>
-  <lastmod>2009-08-07T19:22:15+00:00</lastmod>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://www.lib.montana.edu/~jason/index.php</loc>
+</item>
+<item>
+  <title>About</title>
+  <description>About page for Jason A. Clark's website</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>about.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>about.html</guid>
   <priority>1.0</priority>
-  <lastmod>2010-10-31T14:21:26+00:00</lastmod>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://www.lib.montana.edu/~jason/about.php</loc>
+</item>
+<item>
+  <title>CV and Resume</title>
+  <description>Curriculum vitae and resume for Jason A. Clark</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>resume.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>resume.html</guid>
   <priority>1.0</priority>
-  <lastmod>2010-04-09T12:45:22+00:00</lastmod>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://www.lib.montana.edu/~jason/resume.php</loc>
+</item>
+<item>
+  <title>Code and Files</title>
+  <description>Working code and files created by Jason A. Clark</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>files.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>files.html</guid>
   <priority>1.0</priority>
-  <lastmod>2009-08-01T18:27:33+00:00</lastmod>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://www.lib.montana.edu/~jason/files.php</loc>
+</item>
+<item>
+  <title>Talks and Presentations</title>
+  <description>Talks and Presentations given by Jason A. Clark</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>talks.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>talks.html</guid>
   <priority>1.0</priority>
-  <lastmod>2013-04-11T13:23:22+00:00</lastmod>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://www.lib.montana.edu/~jason/talks.php</loc>
-  <priority>1.0</priority>
-  <lastmod>2013-04-11T10:38:43+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://www.lib.montana.edu/~jason/portfolio.php</loc>
+</item>
+<item>
+  <title>Portfolio</title>
+  <description>Portfolio of Jason A. Clark</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>portfolio.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>portfolio.html</guid>
   <priority>0.8</priority>
-  <lastmod>2008-07-31T13:34:12+00:00</lastmod>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://www.lib.montana.edu/~jason/sandbox.php</loc>
+</item>
+<item>
+  <title>Sandbox</title>
+  <description>Sandbox for working code of Jason A. Clark</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>sandbox.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>sandbox.html</guid>
   <priority>0.8</priority>
-  <lastmod>2007-03-01T19:35:19+00:00</lastmod>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://www.lib.montana.edu/~jason/contact.php</loc>
-  <priority>0.5</priority>
-  <lastmod>2007-03-01T19:38:09+00:00</lastmod>
+</item>
+<item>
+  <title>Contact</title>
+  <description>Contact Jason A. Clark</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>contact.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>contact.html</guid>
+  <priority>0.8</priority>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
-</url>
-</urlset>
+</item>
+</channel>
+</rss>
