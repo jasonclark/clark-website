@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+						http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>http://www.lib.montana.edu/~jason/</loc>
+  <priority>1.0</priority>
+  <lastmod>2009-08-07T19:22:15+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.lib.montana.edu/~jason/index.php</loc>
+  <priority>1.0</priority>
+  <lastmod>2010-10-31T14:21:26+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.lib.montana.edu/~jason/about.php</loc>
+  <priority>1.0</priority>
+  <lastmod>2010-04-09T12:45:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.lib.montana.edu/~jason/resume.php</loc>
+  <priority>1.0</priority>
+  <lastmod>2009-08-01T18:27:33+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.lib.montana.edu/~jason/files.php</loc>
+  <priority>1.0</priority>
+  <lastmod>2013-04-11T13:23:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.lib.montana.edu/~jason/talks.php</loc>
+  <priority>1.0</priority>
+  <lastmod>2013-04-11T10:38:43+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.lib.montana.edu/~jason/portfolio.php</loc>
+  <priority>0.8</priority>
+  <lastmod>2008-07-31T13:34:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.lib.montana.edu/~jason/sandbox.php</loc>
+  <priority>0.8</priority>
+  <lastmod>2007-03-01T19:35:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.lib.montana.edu/~jason/contact.php</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-03-01T19:38:09+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>
