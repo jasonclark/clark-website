@@ -55,11 +55,28 @@ $pageLastModified = date ('c', getlastmod());
 <section>
 	<h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
 	<h2>List of primary pages for Jason A. Clark's website</h2>
+<?php
+//set feed URL
+$request = $protocol.$server.$path.'/sitemap.xml';
+//echo $request;
+//read feed into SimpleXML object
+$data = simplexml_load_file($request);
+?>
 	<ul>
-		<li><a href="./index.html">Jason A. Clark Home Page</a>
+		<li><a href="<?php echo $protocol.$server.$path.'/'; ?>">Jason A. Clark's Website</a>
 		<ul>
-			<li><a href="./about.html">About</a></li>
-			<li><a href="./list.html">All</a>
+<?php
+//parse returned data elements from api call and display as html
+foreach ($data->channel->item as $entry) {
+	$title = htmlentities($entry->title);
+	$description = $entry->description;
+        $link = $entry->link;
+	$pubDate = $entry->pubDate;
+?>
+			<li><a href="<?php echo $link; ?>" title="<?php echo $description; ?>" data-pubDate="<?php echo $pubDate; ?>"><?php echo $title; ?></a></li>
+<?php
+}
+?>
 			<ul>
 				<li><a href="./" title="">link 1</a></li>
 				<li><a href="./" title="">link 2</a></li>
