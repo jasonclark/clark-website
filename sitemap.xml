@@ -54,15 +54,6 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
   <changefreq>monthly</changefreq>
 </item>
 <item>
-  <title>Code and Files</title>
-  <description>Working code and files created by Jason A. Clark</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>files.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>files.html</guid>
-  <priority>1.0</priority>
-  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
-  <changefreq>monthly</changefreq>
-</item>
-<item>
   <title>Talks and Presentations</title>
   <description>Talks and Presentations given by Jason A. Clark</description>
   <link><?php echo $protocol.$server.$path.'/'; ?>talks.html</link>
@@ -72,29 +63,20 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
   <changefreq>monthly</changefreq>
 </item>
 <item>
-  <title>Portfolio</title>
-  <description>Portfolio of Jason A. Clark</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>portfolio.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>portfolio.html</guid>
-  <priority>0.8</priority>
-  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
-  <changefreq>monthly</changefreq>
-</item>
-<item>
-  <title>Sandbox</title>
-  <description>Sandbox for working code of Jason A. Clark</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>sandbox.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>sandbox.html</guid>
-  <priority>0.8</priority>
-  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
-  <changefreq>monthly</changefreq>
-</item>
-<item>
   <title>Contact</title>
   <description>Contact Jason A. Clark</description>
   <link><?php echo $protocol.$server.$path.'/'; ?>contact.html</link>
   <guid><?php echo $protocol.$server.$path.'/'; ?>contact.html</guid>
   <priority>0.8</priority>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
+  <changefreq>monthly</changefreq>
+</item>
+<item>
+  <title>Code and Files</title>
+  <description>Working code and files created by Jason A. Clark</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>files.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>files.html</guid>
+  <priority>1.0</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
 </item>
