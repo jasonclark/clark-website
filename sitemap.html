@@ -40,16 +40,9 @@ $pageLastModified = date ('c', getlastmod());
 </head>
 <body>
 <div class="app" property="mainContentOfPage">
-<header role="banner" aria-label="site header including title and navigation">
-<div class="container">
-<h1 class="site-title"><a href="/">Jason A. Clark</a></h1>
-<nav class="nav" id="nav" role="navigation" typeof="SiteNavigationElement" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#nav">
-	<a class="content-link" property="name url" href="/about">about</a>
-	<a class="content-link" property="name url" href="/talks">talks</a>
-	<a class="content-link" property="name url" href="/code">code</a>
-</nav>
-</div>
-</header>
+<?php 
+include 'meta/inc/header.html';
+?>
 <main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
 <div class="content" property="text">
 <section aria-label="main content">
@@ -95,17 +88,9 @@ foreach ($data->channel->item as $entry) {
 </section>
 </div>
 </main>
-<footer role="contentinfo" aria-label="site footer including navigation and copyright">
-	<hr class="border-ftr">
-	<p class="nav center">
-		<a property="relatedLink" href="search.html">Search</a>
-		<a property="relatedLink" href="http://feeds.feedburner.com/diginit">Feed</a>
-		<a property="relatedLink" href="sitemap.html">Sitemap</a>
-	</p>
-	<p class="center">
-		&copy; <a property="author creator copyrightHolder" href="https://plus.google.com/103883366387427181221?rel=author">Jason A. Clark</a>  <time property="dateModified lastReviewed" datetime="<?php echo $pageLastModified; ?>" title="published <?php echo $pageLastModified; ?>"><?php echo date('Y'); ?></time>
-	</p>
-</footer>
+<?php 
+include 'meta/inc/footer.html';
+?>
 </div>
 <script>
 	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
