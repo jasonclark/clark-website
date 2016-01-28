@@ -65,9 +65,11 @@ foreach ($data->channel->item as $entry) {
 	$description = $entry->description;
         $link = $entry->link;
 	$pubDate = $entry->pubDate;
+	if ($title != 'Sitemap') {
 ?>
 			<li><a href="<?php echo $link; ?>" title="<?php echo $description; ?>" data-pubDate="<?php echo $pubDate; ?>"><?php echo $title; ?></a></li>
 <?php
+	}
 }
 ?>
 			<ul>
