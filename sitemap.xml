@@ -54,6 +54,15 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
   <changefreq>monthly</changefreq>
 </item>
 <item>
+  <title>Sitemap</title>
+  <description>Sitemap for Jason A. Clark's website</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>sitemap.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>sitemap.html</guid>
+  <priority>1.0</priority>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
+  <changefreq>monthly</changefreq>
+</item>
+<item>
   <title>Talks and Presentations</title>
   <description>Talks and Presentations given by Jason A. Clark</description>
   <link><?php echo $protocol.$server.$path.'/'; ?>talks.html</link>
