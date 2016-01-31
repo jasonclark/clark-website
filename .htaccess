@@ -34,3 +34,10 @@ AddType image/svg+xml .svg
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE "text/css" "text/html" "text/javascript" "text/plain" "text/xml" "application/x-javascript" "application/javascript" "application/json" "application/ld+json" "application/manifest+json" "application/rdf+xml" "application/rss+xml" "application/x-font-woff" "application/x-font-ttf" "application/vnd.ms-fontobject" "font/eot" "font/opentype" "font/otf" "font/ttf" "font/x-woff" "image/bmp" "image/jpeg" "image/svg+xml" "image/vnd.microsoft.icon" "image/x-icon" 
 </IfModule>
+
+#redirects and aliases for mapping older files to current files
+#https://httpd.apache.org/docs/current/mod/mod_alias.html#redirect
+Redirect 301 "/home/jason/public_html/about.php" "/home/jason/public_html/about.html"
+Redirect 301 "/home/jason/public_html/index.php" "/home/jason/public_html/index.html"
+Redirect 301 "/home/jason/public_html/index.php" "https://www.lib.montana.edu/~jason/"
+#RedirectMatch 301 "/home/jason/public_html/files/search-ux/(.*).html" "https://www.lib.montana.edu/~jason/files.html"
