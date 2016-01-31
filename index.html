@@ -1,0 +1,82 @@
+<?php
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//assign value for title of page, limit to 60-70 characters
+$pageTitle = 'Jason A. Clark - Thoughts, Code, Talks, and Publications';
+//assign value for description of page, limit to 155 charcters
+$pageDescription = 'Jason A. Clark\'s website includes his working code for sample applications, talks, publications, and his curriculum vitae.';
+//get file last modified date for use in Schema.org date properties
+$pageLastModified = date ('c', getlastmod());
+?>
+<!doctype html>
+<html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $pageTitle; ?></title>
+<meta name="description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:title" content="<?php echo $pageTitle; ?>"/>
+<meta property="og:description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:image" content="https://www.lib.montana.edu/~jason/meta/img/clark-share-default.png"/>
+<meta property="og:url" content="https://www.lib.montana.edu/~jason/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="http://www.jasonclark.info"/>
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+<link rel="canonical" href="<?php echo $protocol.$server.$path.'/'.$fileName; ?>"/>
+<link rel="manifest" href="./manifest.json"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"/>
+<link rel="stylesheet" href="./meta/styles/global.css"/>
+</head>
+<body>
+<div class="app" property="mainContentOfPage">
+<?php 
+include './meta/inc/header.html';
+?>
+<main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
+<div class="content" property="text">
+<section aria-label="main content">
+	<h1 property="alternativeHeadline name"><?php $words = explode('-',$pageTitle); echo $words[0]; ?></h1>
+	<h2><?php $words = explode('-',$pageTitle); echo $words[1]; ?></h2>
+	<figure class="center">	
+		<picture>		
+		<source media="all and (min-width: 50.1em)" srcset="" />
+		<source media="all and (max-width:30.063em)" srcset="" />		
+		<img class="feature" property="image" src="https://www.lib.montana.edu/~jason/meta/img/shelflst.gif" alt="Jason A. Clark - Code, Talks, and Publications" width="350" height="195">
+		</picture>
+	</figure>
+	<p class="center" property="about description">My home on the Web including my working code for sample applications, thoughts, talks, publications, and my curriculum vitae.</p>
+	<!--<p><a class="latest" title="follow @jaclark" href="https://twitter.com/intent/user?user_id=1835821">Recently +</a></p>
+	<ul class="list center none">
+		<li><a class="twitter-timeline" href="https://twitter.com/jaclark" data-widget-id="344685560230723584" data-chrome="noheader nofooter noborders transparent" data-link-color="#59708C" data-aria-polite="assertive" data-tweet-limit="1" width="180" height="150" lang="EN">Tweets by @jaclark</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</li>
+	</ul>-->
+	<p class="center"><a class="button small" property="sameAs" href="https://twitter.com/jaclark">@jaclark</a> <a class="button small" property="sameAs" href="https://github.com/jasonclark">github</a> <a class="button small" property="isBasedOnUrl" href="./resume.php">curriculum vitae</a></p>
+</section>
+</div>
+</main>
+<?php 
+include './meta/inc/footer.html';
+?>
+</div>
+<script>
+	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	e.src='https://www.google-analytics.com/analytics.js';
+	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	ga('create','ADD-GOOGLE-ANALYTICS-ID-HERE','auto');ga('send','pageview');
+</script>
+</body>
+</html>
