@@ -46,8 +46,8 @@ include './meta/inc/header.html';
 <main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
 <div class="content" property="text">
 <section aria-label="main content">
-	<h1 property="alternativeHeadline name"><?php $words = explode('-',$pageTitle); echo $words[0]; ?></h1>
-	<h2><?php $words = explode('-',$pageTitle); echo $words[1]; ?></h2>
+	<h1 property="alternativeHeadline name"><?php $titleSection = explode('-',$pageTitle); echo trim($titleSection[0]); ?></h1>
+	<h2><?php $titleSection = explode('-',$pageTitle); echo trim($titleSection[1]); ?></h2>
 	<figure class="center">	
 		<picture>		
 		<source media="all and (min-width: 50.1em)" srcset="" />
