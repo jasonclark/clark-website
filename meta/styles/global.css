@@ -162,5 +162,5 @@ header button.small,
 	header .nav {float:none;display:block;}
 	.content {min-width:95%;}
 	.list {text-align:left;}
-	.feature {min-width:95%;}
+	.feature {width:98%;}
 }
