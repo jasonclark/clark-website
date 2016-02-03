@@ -1,0 +1,272 @@
+<?php
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//assign value for title of page, limit to 60-70 characters
+$pageTitle = 'Talks and Workshops - Jason A. Clark';
+//assign value for description of page, limit to 155 charcters
+$pageDescription = 'List of talks, workshops, and presentations from Jason A. Clark';
+//get file last modified date for use in Schema.org date properties
+$pageLastModified = date ('c', getlastmod());
+?>
+<!doctype html>
+<html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $pageTitle; ?></title>
+<meta name="description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:title" content="<?php echo $pageTitle; ?>"/>
+<meta property="og:description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:image" content="https://www.lib.montana.edu/~jason/meta/img/clark-share-default.png"/>
+<meta property="og:url" content="https://www.lib.montana.edu/~jason/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="http://www.jasonclark.info"/>
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+<link rel="canonical" href="<?php echo $protocol.$server.$path.'/'.$fileName; ?>"/>
+<link rel="manifest" href="./manifest.json"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"/>
+<link rel="stylesheet" href="./meta/styles/global.css"/>
+</head>
+<body>
+<div class="app" property="mainContentOfPage">
+<?php 
+include './meta/inc/header.html';
+?>
+<main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
+<div class="content" property="text">
+<section aria-label="main content">
+	<h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
+	<h2>A list of talks, workshops, and presentations</h2>
+<p><a href="./talks/niso2015-semantic-reading-systems.pdf">&quot;Building Smarter Books in Browsers with RDFa, Schema.org, & Linked Data: Leveraging Standards & Tools in the Creation of Semantically-Enhanced Reading Systems&quot;</a><br />
+<em>NISO/NFAIS Virtual Conference: Semantic Web: What's New &amp; Cool?, Online Session, 02 December 2015</em>.</p>
+<p><a href="./talks/chs2015-machine-processes-research-signals.pdf">&quot;Finding the Machine [processes]: Applying the Open Data Project to Research Services&quot;</a><br />
+<em>Charleston Conference 2015, My section of a panel with Kamran Naim and Robin Champieux, 06 November 2015</em>.</p>
+<p><a href="./talks/dlf2015-search-ux.pdf">&quot;Is there a Ghost in the [Search] Machine? Improving Search UX using Query Analysis and Machine Cues&quot;</a><br />
+<em>Digital Library Annual Forum 2015, Research Snapshot, 26 October 2015</em>.</p>
+<p><a href="./talks/flw2015-rdfa-schema-dbpedia.pdf">&quot;RDFa Markup, Schema.org Vocabularies, and DBpedia Topics for <del>Digital</del> <ins>Library</ins> Collections&quot;</a><br />
+<em>Florida Library Webinars (Novare), Online Session, 22 August 2015</em>.</p>
+<p><a href="./talks/flw2015-session-open-data.pdf">&quot;Open Data + Open Libraries: Supporting the Open Data Project in Library Services&quot;</a><br />
+<em>Florida Library Webinars (Novare), Online Session, 24 July 2015</em>.</p>
+<p><a href="./talks/ala2015-linked-data-discovery.pdf">&quot;Implementing Linked Data & Discovery: Liberating Library Data & Empowering Users&quot;</a><br />
+<em>American Library Association (ALA) Annual Meeting, San Francisco, California, 27 June 2015</em>.</p>
+<p><a href="./talks/arcs2015-book-platform.pdf">&quot;Book as Platform: Linking Data to Build a Better Book&quot;</a><br />
+<em>ARCS: Advancing Research Communication &amp; Scholarship, Philadelphia, Pennsylvania, Session with Scott W. H. Young, 27 April 2015</em>.</p>
+<p><a href="./talks/dlf2014-rdfa-schema-dbpedia.pdf">&quot;RDFa Markup, Schema.org Vocabularies, and DBpedia Topics for Digital Collections&quot;</a><br />
+<em>Digital Library Federation (DLF) Annual Forum, Atlanta, Georgia, 28 October 2014</em>.</p>
+<p><a href="http://slides.com/swyoung/access-2014-linked-data-is-people/embed?style=light">&quot;Linked Data is People: Using Linked Data to Reshape the Library Staff Directory&quot;</a><br />
+<em>ACCESS Conference 2014, Calgary, Canada, Session with Scott W. H. Young, 28 September 2014</em>.</p>
+<p><a href="./talks/ala2014-session-schema.pdf">&quot;Beyond Description: Using Schema.org to describe networks and actions in book, people, and discovery settings&quot;</a> | <a href="https://pinboard.in/u:jasonclark/t:ala-schema/">Schema.org Session Linkroll</a><br />
+<em>American Library Association (ALA) Annual Meeting, Session with Jenn Riley and Dan Scott, 29 June 2014</em>.</p>
+<p><a href="./talks/novare2014-session-linked-open-data.pdf">&quot;Linked Open Data (LOD) in Libraries&quot;</a> | <a href="https://pinboard.in/u:jasonclark/t:lod/">Linked Open Data Linkroll</a><br />
+<em>Florida Library Webinars (Novare), Online Workshop, 30 May 2014</em>.</p>
+<p><a href="./talks/novare2014-session-seo.pdf">&quot;Libraries in Search Engines: Search Engine Optimization (SEO) for Libraries&quot;</a><br />
+(Conference Workshop with Patrick O'Brien)<br />
+<em>Florida Library Webinars (Novare), Online Workshop, 02 April 2014</em>.</p>
+<p><a href="http://slides.com/swyoung/metadata-first-dlf-forum-2013">&quot;Metadata First: Using Structured Data Markup and the Google Custom Search API to Outsource Your Digital Collection Search&quot;</a><br />
+(Session with Scott Young)<br />
+<em>Digital Library Federation (DLF) Annual Forum, Austin, Texas, 04 November 2013</em>.</p>
+<p><a href="http://slides.com/swyoung/access-conference-2013">&quot;Building a Better Book (in the browser): Using HTML5 to Transform and Unlock Book Content&quot;</a><br />
+(Session with Scott Young)<br />
+<em>Access [technology conference], St. John’s, Newfoundland, Canada, 25 September 2013</em>.</p>
+<p><a href="./talks/novare2013-workshop-webservices.pdf">&quot;Web as Platform: Using Web Services + APIs to Add Value to Library Apps &amp; Services&quot;</a> | <a title="web services bootcamp workshop handout" href="./talks/novare2013-workshop-webservices-handout.pdf">Handout</a><br />
+<em>Florida Library Webinars (Novare), Online Workshop, 11 September 2013</em>.</p>
+<p><a href="./talks/novare2013-session-html5.pdf">&quot;HTML5 &amp; CSS3: New Markup Styles for the Emerging Web&quot;</a> | <a title="html5 css3 workshop handout" href="./talks/novare2013-workshop-html5-handout.pdf">Handout</a><br />
+<em>Florida Library Webinars (Novare), Online Workshop, 12 June 2013</em>.</p>
+<p><a href="./talks/novare2013-session-rwd.pdf">&quot;Responsive Web Design (RWD)&quot;</a> | <a href="https://pinboard.in/u:jasonclark/t:rwd/">Responsive Web Design Linkroll</a><br />
+<em>Florida Library Webinars (Novare), Online Workshop, 24 April 2013</em>.</p>
+<p><a href="./talks/cil2013-workshop-webservices-bootcamp.pdf">&quot;Web Services Bootcamp&quot;</a> | <a href="./talks/cil2013-workshop-webdevbootcamp-handout.pdf">Handout</a><br />
+<em>Computers in Libraries, Washington, DC, 11 April 2013</em>.</p>
+<p><a href="./talks/cil2013-workshop-mobile-jquery.pdf">&quot;Best Practices in Mobile Development: Building Your First jQuery Mobile App&quot;</a> | <a href="https://docs.google.com/document/d/1YXtAUBORjZ0hO9zQYdp71zkW4hGY_AA1JPU3wW5pg7w/edit">jQuery Mobile Codelab Handout</a><br />
+<em>Computers in Libraries, Washington, DC, 07 April 2013</em>.</p>
+<p>&quot;Building Web Applications with HTML5 &amp; Javascript: An Intro to HTML5&quot;<br />
+<em>Computers in Libraries, Washington, DC, 07 April 2013</em>.<br />
+<ul>
+<li><a href="./talks/cil2013-html5.pdf">HTML5: An Evolution in Markup</a></li>
+<li><a href="./talks/cil2013-html5-css3.pdf">CSS3: Rethinking Web Displays &amp; Styles</a></li>
+<li><a href="./talks/cil2013-html5-javascript.pdf">Javascript APIs: Software Programming for the Web</a></li>
+<li><a href="./talks/cil2013-html5-future.pdf">Future of HTML5</a></li>
+<li><a href="./talks/cil2013-workshop-html5-handout.pdf">HTML5 &amp; CSS3 [handout]</a></li>
+</ul>
+</p>
+<p><a href="./talks/amigos2013-html5-microdata.pdf">&quot;Welcome to the Machine: Making digital library collections findable by people and bots using SEO, schema.org, and HTML5 microdata&quot;</a> <br />
+(Session with Scott Young) <br /><em>HTML5 and CSS3: Ready for Prime Time?, Online, 08 February 2013</em>.</p>
+<p><a href="./talks/offline2013-workshop-mobile-web.pdf">&quot;Designing Mobile Experiences&quot;</a> | <a title="mobile design handout" href="https://docs.google.com/document/d/1M0wZ7T33U4TL8di7G2v7Z1wK3NL-Htp_rIiW13qMMuI/edit?usp=sharing">Handout</a><br />
+<em>Offline MT, Butte, MT, 02 February 2013</em>.</p>
+<p>&quot;Building Web Applications with HTML5, CSS3, &amp; Javascript: An Intro to HTML5&quot;<br />
+<em>ALA Midwinter Meeting, Seattle, WA, 25 January 2013</em>.<br />
+<ul>
+<li><a href="./talks/lita-html5.pdf">HTML5: An Evolution in Markup</a></li>
+<li><a href="./talks/lita-html5-css3.pdf">CSS3: Rethinking Web Displays &amp; Styles</a></li>
+<li><a href="./talks/lita-html5-javascript.pdf">Javascript APIs: Software Programming for the Web</a></li>
+<li><a href="./talks/lita-html5-future.pdf">Future of HTML5</a></li>
+<li><a href="./talks/lita-workshop-html5-handout.pdf">HTML5 &amp; CSS3 [handout]</a></li>
+</ul>
+</p>
+<p><a href="./talks/il2012-workshop-mobile-jquery.pdf">&quot;Best Practices in Mobile Development: Building Your First jQuery Mobile App&quot;</a><br />
+<em>Internet Librarian, Monterey, CA, 21 October 2012</em>.</p>
+<p><a href="./talks/melsa2012-workshop-mobile-web.pdf">&quot;Building Mobile Web Sites &amp; Apps&quot;</a><br />
+<em>Metropolitan Library Service Agency (MELSA), Tech Training Workshop, Minneapolis, MN, 15 October 2012</em>.</p>
+<p><a href="./talks/ala2012-diy.pdf">&quot;I Can Do It All by Myself : Exploring new roles for libraries and mediating technologies in addressing the DIY mindset of library patrons&quot;</a><br />
+(Session with Patrick T. Colegrove and Bohyun Kim)<br />
+<em>American Library Association Annual, Anaheim, CA. June 24, 2012</em>.</p>
+<p><a href="./talks/ei2012-workshop-html5.pdf">&quot;HTML5 &amp; CSS3: New Markup Styles for the Emerging Web&quot;</a> | <a title="html5 css3 workshop handout" href="./talks/ei2012-workshop-html5-handout.pdf">Handout</a><br />
+<em>Education Institute (Canada), Online Workshop, 01 May 2012</em>.</p>
+<p><a href="./talks/cil2012-html5.pdf">&quot;Getting to know HTML5 &amp; CSS3: New Markup Styles for the Emerging Web&quot;</a><br />
+<em>Computers in Libraries, Washington, DC, March 21, 2012</em>.</p>
+<p><a href="./talks/cil2012-think-tank.pdf">&quot;Building a ThinkTank @ Your Library&quot;</a><br />
+<em>Computers in Libraries, Washington, DC, March 21, 2012</em>.</p>
+<p><a href="./talks/cil2012-workshop-mobile-design.pdf">&quot;Designing Mobile Experiences&quot;</a> | <a title="mobile design handout" href="./talks/cil2012-workshop-mobile-design-handout.pdf">Handout</a><br />
+<em>Computers In Libraries, Washington, DC, 20 March 2012</em>.</p>
+<p>&quot;Web Development Bootcamp: Mashups &amp; Web Services&quot; | <a title="web dev mashup workshop handout" href="./talks/cil2012-workshop-webdevbootcamp-handout.pdf">Handout</a><br />
+(Conference Workshop with Amanda Hollister) <br />
+<em>Computers In Libraries, Washington, DC, 20 October 2012</em>.</p>
+<p><a href="./talks/ei2012-workshop-html5.pdf">&quot;HTML5 &amp; CSS3: New Markup Styles for the Emerging Web&quot;</a> | <a title="html5 css3 workshop handout" href="./talks/ei2012-workshop-html5-handout.pdf">Handout</a><br />
+<em>Education Institute (Canada), Online Workshop, 01 March 2012</em>.</p>
+<p><a href="./talks/hhlib-mobile-jquery-app.pdf">&quot;Best Practices in Mobile Development: Building Your First jQuery Mobile App&quot;</a> <br />
+(Session with Chad Mairn) <br /><em>Handheld Librarian VI, Online, 02 February 2012</em>.</p>
+<p><a href="./talks/alamw2012-mobile-html5.pdf">&quot;HTML5 Apps, APIs, and the Mobile Platform&quot;</a> <br />
+<em>ALA Midwinter Meeting, Online, 11 January 2012</em>.</p>
+<p><a href="./talks/il2011-think-tank.pdf">&quot;Building a ThinkTank @ Your Library&quot;</a><br />
+<em>Internet Librarian, Monterey, CA, October 19, 2011</em>.</p>
+<p><a href="./talks/il2011-qr-codes-action.pdf">&quot;QR Codes in Action&quot;</a><br />
+<em>Internet Librarian, Monterey, CA, October 17, 2011</em>.</p>
+<p><a href="./talks/plan2011-workshop-html5-css3.pdf">&quot;HTML5 &amp; CSS3: New Markup Styles for the Emerging Web&quot;</a> | <a title="html5 css3 workshop handout" href="./talks/plan2011-workshop-html5-css3-handout.pdf">Handout</a><br />
+<em>Panhandle Library Access Network (PLAN), Online Workshop, 12 and 15 September 2011</em>.</p>
+<p><a href="./talks/cil2011-libapp-location.pdf">&quot;Where are You?: Location and Library Applications&quot;</a> <br />
+<em>Computers In Libraries, Washington, DC, 23 March 2011</em>.</p>
+<p><a href="./talks/cil2011-workshop-html5-css3.pdf">&quot;HTML5 &amp; CSS3: New Markup Styles for the Emerging Web&quot;</a> | <a title="html5 css3 workshop handout" href="./talks/cil2011-workshop-html5-css3-handout.pdf">Handout</a><br />
+<em>Computers In Libraries, Washington, DC, 20 March 2011</em>.</p>
+<p><a href="./talks/cil2011-workshop-mobile-design.pdf">&quot;Designing Mobile Experiences&quot;</a> | <a title="mobile design handout" href="./talks/cil2011-workshop-mobile-design-handout.pdf">Handout</a><br />
+<em>Computers In Libraries, Washington, DC, 20 March 2011</em>.</p>
+<p><a href="./talks/hormay-range-science-feb2011.pdf">&quot;Promoting and Building Range Science Digital Collections&quot;</a><br />
+<em>Society of Range Management, Billings, MT, February 7, 2011</em>.</p>
+<p><a href="https://docs.google.com/present/view?id=dfcgqf69_198gpw43fmg">&quot;Web Services Bootcamp: Add Value to Library Apps &amp; Services&quot;</a> | <a title="web services bootcamp workshop handout" href="./talks/tbcl2011-workshop-webservices-handout.pdf">Handout</a><br />
+<em>Tampa Bay Library Consortium, Online Workshop, January 31, 2011</em>.</p>
+<p>&quot;Creating Library Web Services&quot;<br />
+<em>ALA Midwinter Meeting, San Diego, CA, 7 January 2011</em>.<br />
+<ul>
+<li><a href="./talks/ala2011-web-services-intro-apis.pdf">&quot;Web Services Introduction&quot;</a></li>
+<ul>
+<li><a href="./talks/ala2011-web-services-intro-handout.pdf">Web Services Introduction [handout]</a></li>
+</ul>
+<li><a href="./talks/ala2011-web-services-geo-news-apis.pdf">&quot;Web Services: Geographic &amp; News APIs&quot;</a></li>
+<ul>
+<li><a href="./talks/ala2011-web-services-geo-news-apis-handout.pdf">Web Services: Geographic &amp; News APIs [handout]</a></li>
+</ul>
+<li><a href="./talks/ala2011-web-services-media-apis.pdf">&quot;Web Services: Media APIs&quot;</a></li>
+<ul>
+<li><a href="./talks/ala2011-web-services-media-apis-handout.pdf">Web Services: Media APIs [handout]</a></li>
+</ul>
+</ul>
+</p>
+<p><a href="./talks/il2010-session-newstreams-itunes.pdf">&quot;Designing New Information Streams for Libraries: Hacking iTunes&quot;</a> <br />
+<em>Internet Librarian, Monterey, CA, 26 October 2010</em>.</p>
+<p><a href="./talks/il2010-session-libapp-location.pdf">&quot;Where are You?: Location and Library Applications&quot;</a> <br />
+<em>Internet Librarian, Monterey, CA, 25 October 2010</em>.</p>
+<p><a href="./talks/il2010-workshop-html5-css3.pdf">&quot;HTML5 &amp; CSS3: New Markup Styles for the Emerging Web&quot;</a> | <a title="html5 css3 workshop handout" href="./talks/il2010-workshop-html5-css3-handout.pdf">Handout</a><br />
+<em>Internet Librarian, Monterey, CA, 24 October 2010</em>.</p>
+<p><a href="https://docs.google.com/present/view?id=dfcgqf69_196f393vxfp">&quot;Web Development Bootcamp: Mashups &amp; Web Services&quot;</a> | <a title="web dev mashup workshop handout" href="./talks/il2010-workshop-webdevbootcamp-handout.pdf">Handout</a><br />
+<em>Internet Librarian, Monterey, CA, 24 October 2010</em>.</p>
+<p><a href="./talks/il2010-workshop-mobile-design.pdf">&quot;Designing Mobile Experiences&quot;</a> | <a title="mobile design handout" href="./talks/il2010-workshop-mobile-design-handout.pdf">Handout</a><br />
+<em>Internet Librarian, Monterey, CA, 23 October 2010</em>.</p>
+<p><a title="web services bootcamp workshop presentation" href="http://www.lib.montana.edu/~jason/talks/neflin2010-workshop-webservices.pdf">&quot;Web Services Bootcamp: Adding Value to Library Apps &amp; Services&quot;</a> | <a title="web services bootcamp workshop handout" href="http://www.lib.montana.edu/~jason/talks/neflin2010-webservices-workshop-handout.pdf">Handout</a> <br />
+<em>Northeast Florida Library Information Network, Online Workshop, September 20, 2010</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/hhlib3-2010-mobiledev-clark.pdf">&quot;Mobile Development Tips:
+Building Mobile Apps for Digital Libraries&quot;</a> <br />
+<em>Handheld Librarian III, 28 July 2010</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/cil2010-javascript-apps.pdf">&quot;Working with Javascript: Building Responsive Library Apps&quot;</a> | <a title="javascript workshop handout" href="http://www.lib.montana.edu/~jason/talks/cil2010-javascript-apps-handout.pdf">Handout</a> <br />
+<em>Computers In Libraries, Crystal City, VA, 15 April 2010</em>.</p>
+<p><a href="http://docs.google.com/present/edit?id=0AU0qDiMLT3XdZGZjZ3FmNjlfMTEwYzc5cGZkcHQ&hl=en">&quot;Cloud Computing in Practice: Digital Video Mashups&quot;</a> <br />
+<em>Computers In Libraries, Crystal City, VA, 14 April 2010</em>.</p>
+<p><a href="http://docs.google.com/present/edit?id=0AU0qDiMLT3XdZGZjZ3FmNjlfOTlkbTdodHBodA&hl=en">&quot;Mobile Development Tips and Practices&quot;</a> <br />
+<em>Computers In Libraries, Crystal City, VA, 14 April 2010</em>.</p>
+<p><a href="http://docs.google.com/present/edit?id=0AU0qDiMLT3XdZGZjZ3FmNjlfMTI1Z25iOTV6ZzQ&hl=en">&quot;HTML5 and CSS3: Not Your Father's Markup&quot;</a> <br />
+<em>Computers In Libraries, Crystal City, VA, 14 April 2010</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/digital-bootcamp-mla2010.ppt">&quot;Digitization Bootcamp&quot;</a> |
+<a title="metadata sample" href="http://www.lib.montana.edu/~jason/talks/metadata-mods-sample.xls">Metadata Sample</a> | <a title="database best practices" href="http://www.lib.montana.edu/~jason/talks/digital-bootcamp-mla2010-bestpractice.pdf">Best Practices - Data</a><br />
+(Session with Bonnie Mccallum) <br /><em>Montana Library Association, Bozeman, MT, 08 April 2010</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/offline2009-apis-web-services.pdf">&quot;Open APIs &amp; Web Services.&quot;</a> | <a title="API code demos" href="http://www.lib.montana.edu/~jason/talks/offline/">Demos</a> <br />(Session with Elizabeth Babbitt) <br /><em>Offline, Billings, MT, 19 February 2010</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/il2009-mobile.pdf">&quot;Mobile Apps for Libraries.&quot;</a> <br />
+<em>Internet Librarian, Monterey, CA, 27 October 2009</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/il2009-cloud-computing.pdf">&quot;Cloud Computing in Action.&quot;</a> <br />
+<em>Internet Librarian, Monterey, CA, 26 October 2009</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/il2009-igoogle.pdf">&quot;iGoogling with the Library.&quot;</a> <br />
+<em>Internet Librarian, Monterey, CA, 26 October 2009</em>.</p>
+<p>&quot;Widgets, Gadgets, and Mobile Apps for Libraries.&quot; | <a title="gadget workshop handout" href="http://www.lib.montana.edu/~jason/talks/il2009-workshop-gadget-handout.pdf">Handout</a> <br />
+(Conference Workshop with Michael Sauers and Karen A. Coombs) <br /><em>Internet Librarian, Monterey, CA, 25 October 2009</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/pnla2009-flickr.ppt">&quot;Flickr &amp; Digital Collections @ Your Library&quot;</a> | <a title="flickr metadata template" href="http://www.lib.montana.edu/~jason/talks/flickr-metadata-template.xls">Flickr Metadata Template</a> <br />
+(Session with Bonnie Mccallum) <br /><em>Pacific Northwest Library Association, Missoula, MT, 06 August 2009</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/cil2009-portable-library.ppt">&quot;The Portable Library: Widgetizing, Gadgetizing, and Mobilizing Web Apps.&quot;</a> <br />
+<em>Computers In Libraries, Crystal City, VA, 30 March 2009</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/cil2009-workshop-webservices.txt">&quot;Web Services for Libraries.&quot;</a> | <a title="web services workshop handout" href="http://www.lib.montana.edu/~jason/talks/cil2009-workshop-webservices-handout.pdf">Handout</a> <br />
+(Conference Workshop with Karen A. Coombs) <br /><em>Computers In Libraries, Crystal City, VA, 29 March 2009</em>.</p>
+<p>&quot;Widgets, Gadgets, and Mobile Apps for Libraries.&quot; | <a title="gadget workshop handout" href="http://www.lib.montana.edu/~jason/talks/cil2009-workshop-gadget-handout.pdf">Handout</a> <br />
+(Conference Workshop with Michael Sauers and Karen A. Coombs) <br /><em>Computers In Libraries, Crystal City, VA, 29 March 2009</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/il2008-feed-me.pdf">&quot;Using RSS, Podcasts, & XML to Deliver Rich-Media Content.&quot;</a> <br />
+<em>Internet Librarian, Monterey, CA, 21 October 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/il2008-searchWidgets.pdf">&quot;Search Widgets and Gadgets for Libraries.&quot;</a> <br />
+<em>Internet Librarian, Monterey, CA, 20 October 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/il2008-workshop-webservices.txt">&quot;Web Services for Libraries.&quot;</a> | <a title="web services workshop handout" href="http://www.lib.montana.edu/~jason/talks/il2008-workshop-webservices-handout.pdf">Handout</a> <br />
+(Conference Workshop with Karen A. Coombs) <br /><em>Internet Librarian, Monterey, CA, 19 October 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/il2008-workshop-ajax.pdf">&quot;Ajax (Asynchronous Javascript and XML) for Libraries.&quot;</a> | <a title="Ajax workshop handout" href="http://www.lib.montana.edu/~jason/talks/il2008-workshop-ajax-handout.pdf">Handout</a> <br />
+(Conference Workshop with Karen A. Coombs) <br /><em>Internet Librarian, Monterey, CA, 18 October 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/tcli2008-socialWeb.pdf">&quot;Integrating Libary Services with the Social Web.&quot;</a> <br />
+<em>Tribal Colleges Library Institute, Bozeman, MT, 12 June 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/bestPractices2008-lofiAPI.pdf">&quot;A "lofiAPI": Using open source applications and simple XML to build a library web service.&quot;</a>
+<br />
+<em>Best Practices Exchange, Helena, MT, 21 May 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/bestPractices2008-microApps.pdf">&quot;Micro Library Apps - OpenSearch Widgets and Google Gadgets for Libraries.&quot;</a>
+<br /><em>Best Practices Exchange, Helena, MT, 21 May 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/cil2008-workshop-webservices.pdf">&quot;Web Services for Libraries.&quot;</a> | <a title="Web Services workshop handout" href="http://www.lib.montana.edu/~jason/talks/cil2008-workshop-webservices-handout.pdf">Handout</a> <br />
+(Conference Workshop) <br /><em>Computers in Libraries, Crystal City, VA, 10 April 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/cil2008-workshop-ajax.pdf">&quot;Ajax (Asynchronous Javascript and XML) for Libraries.&quot;</a> | <a title="Ajax workshop handout" href="http://www.lib.montana.edu/~jason/talks/cil2008-workshop-ajax-handout.pdf">Handout</a> <br />
+(Conference Workshop with Karen A. Coombs) <br /><em>Computers in Libraries, Crystal City, VA, 10 April 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/cil2008-session-diglib.pdf">&quot;Next-Generation Digital Libraries.&quot;</a> <br />
+<em>Computers in Libraries, Crystal City, VA, 09 April 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/cil2008-session-interface.pdf">&quot;What To Do When Interface Design Goes Bad.&quot;</a> <br />
+<em>Computers in Libraries, Crystal City, VA, 09 April 2008</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/clark-coombs-ajax-il2006.ppt">&quot;Ajax (Asynchronous Javascript and XML) for Libraries.&quot;</a> <br />
+(Conference Workshop with Karen A. Coombs) <br /><em>Internet Librarian, Monterey, CA, 27 October 2007</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/clark-opensource-msu2007.pdf">&quot;Open Source Software and Libraries: Practical Applications&quot; [panel discussion]</a> <br /><em>MSU Academic Libraries Symposium, Bozeman, MT, 05 October 2007</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/clark-web2.0-offline2007.pdf">&quot;What Does Web 2.0 Mean for Libraries?&quot;</a> <br />
+<em>OFFLINE, Bozeman, MT, 23 February 2007 (invited)</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/clark-tagging-il2006.pdf">&quot;Innovative Uses of Web 2.0 Technologies - Social Tagging and Folksonomies in Practice.&quot;</a> <br />
+<em>Internet Librarian, Monterey, CA, 23 October 2006</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/clark-coombs-ajax-il2006.ppt">&quot;Ajax (Asynchronous Javascript and XML) for Libraries.&quot;</a> | <a title="Ajax workshop handout" href="http://www.lib.montana.edu/~jason/talks/clark-coombs-ajax-il2006.pdf">Handout</a> <br />
+(Conference Workshop with Karen A. Coombs) <br /><em>Internet Librarian, Monterey, CA, 21 October 2006</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/clark-mmp-mla2006.ppt">&quot;Montana Memory Project - What's in it for You? What's in it for Our Patrons?&quot;</a> <br />
+(with Jennie Stapp and Steve McCann) <br /><em>Montana Library Association, Missoula, MT, 22 May 2006</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/clark-ajax-cil2006.pdf">&quot;New Web Site Tools and Technologies - Ajax (Asynchronous Javascript and XML).&quot;</a> <br />
+<em>Computers in Libraries, Washington D.C., 22 March 2006</em>.</p>
+<p><a href="http://www.lib.montana.edu/~jason/talks/clark-webpm-cil2005.ppt">&quot;Web Project Management for Libraries.&quot;</a> <br />
+<em>Computers in Libraries, Washington D.C., 15 March 2005</em>.</p>
+<p>&quot;Get off your RSS! - Practical XML for Libraries.&quot; <br /><em>Williams College Libraries, Williamstown, MA, 16 October 2004</em>.</p>
+<p>(Selected presentations are also available at <a href="http://www.slideshare.net/jaclark">my slideshare account</a>.)</p>
+</section>
+</div>
+</main>
+<?php 
+include './meta/inc/footer.html';
+?>
+</div>
+<script>
+	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	e.src='https://www.google-analytics.com/analytics.js';
+	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	ga('create','ADD-GOOGLE-ANALYTICS-ID-HERE','auto');ga('send','pageview');
+</script>
+</body>
+</html>
