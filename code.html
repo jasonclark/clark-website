@@ -49,7 +49,6 @@ include './meta/inc/header.html';
 	<h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
 	<h2>A collection of sample apps, working code, and associated files</h2>
 	<p>Some code is also available on GitHub at <a href="https://github.com/jasonclark">github.com/jasonclark</a>. All code is licensed under the <a href="https://opensource.org/licenses/MIT" title="MIT License (MIT)">MIT License (MIT)</a>.</p>
-	
 <script>
 function setView(name) {
 	var name;
@@ -58,14 +57,13 @@ function setView(name) {
 	var ul = document.getElementById("code_list");
 	var els  = ul.getElementsByClassName(name);
 
-	for(var i = 0; i != els.length; ++i)
-	{
-
-                if(els[i].classList.contains(name)) {    
+	for(var i = 0; i != els.length; ++i) {
+		els[i].style.backgroundColor = "red";
+                /*if(els[i].classList.contains(name)) {    
                     els[i].style.display = "block";
                 } else {
                     els[i].style.display = "none";
-                }
+                }*/
 	}
 
 }
@@ -83,11 +81,12 @@ function init() {
 	setInterval(checkHash, 100);
 }
 
-// call our init function when the page loads
-window.onload = init;
-window.onhashchange = checkHash;
+// call our init function when the page hash changes
+//window.onhashchange = init()
+window.onhashchange = function () {
+    init();
+};
 </script>
-
 	<nav class="" id="filter">
 		<a class="current" href="#all">All</a>
 		<a href="#web-services">Web Services</a>
