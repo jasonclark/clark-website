@@ -49,75 +49,37 @@ include './meta/inc/header.html';
 	<h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
 	<h2>A collection of sample apps, working code, and associated files</h2>
 	<p>Some code is also available on GitHub at <a href="https://github.com/jasonclark">github.com/jasonclark</a>. All code is licensed under the <a href="https://opensource.org/licenses/MIT" title="MIT License (MIT)">MIT License (MIT)</a>.</p>
-<script>
-function setView(name) {
-	var name;
-	console.log(name);
-	var i;
-	var ul = document.getElementById("code_list");
-	var els  = ul.getElementsByClassName(name);
-
-	for(var i = 0; i != els.length; ++i) {
-		els[i].style.backgroundColor = "red";
-                /*if(els[i].classList.contains(name)) {    
-                    els[i].style.display = "block";
-                } else {
-                    els[i].style.display = "none";
-                }*/
-	}
-
-}
-var checkHash = (function() {
-    var hash;
-    return function() {
-        if (window.location.hash !== hash) {
-	    hash = window.location.hash.substring(1); 
-            setView(hash);
-        }
-};
-})();
-
-function init() {
-	setInterval(checkHash, 100);
-}
-
-// call our init function when the page hash changes
-//window.onhashchange = init()
-window.onhashchange = function () {
-    init();
-};
-</script>
-	<nav class="" id="filter">
-		<a class="current" href="#all">All</a>
-		<a href="#web-services">Web Services</a>
+	<nav class="nav center" id="filter">
+		<a href="#all">All</a>
 		<a href="#javascript">Javascript</a>
-		<a href="#mobile">Mobile</a>
-		<a href="#widgets">Widgets</a>
+		<a href="#search">Search</a>
+		<a href="#semantic-web">Semantic Web</a>
+		<a href="#web-services">Web Services</a>
 	</nav>
-	<ul id="code_list">
-		<li class="all web-services"><a href="./files/digital-collections-custom-search-api/">Digital Collections (Google Custom Search API)</a><br />App that uses Google Custom Search API to index public web collections -> potentially allows any library (even a small public) to have a search app with facets for its web presence.<br />* From Digital Library Forum (DLF) 2013 session: "<a href="http://www.diglib.org/forums/2013forum/schedule/84-2/">Metadata First: Using Structured Data Markup and the Google Custom Search API to Outsource Your Digital Collection Search Index</a>"<br />Download: <a href="./files/digital-collections-custom-search-api.zip">.zip</a> or <a href="https://github.com/jasonclark/digital-collections-custom-search-api">GitHub</a></li>
-		<li class="all web-services"><a href="./files/youtube-digital-library/">Digital Video Library App (YouTube Data API version 2)</a><br />App that uses YouTube API to create a digital video library -> potentially allows any library (even a small public) to have a digital library for its videos<br />* From Code4Lib Journal article: "<a href="http://journal.code4lib.org/articles/7847">Developing a Digital Video Library with the YouTube Data API</a>"<br />Download: <a href="./files/youtube-digital-library.zip">.zip</a> or <a href="https://github.com/jasonclark/youtube-digital-library">GitHub</a></li>
-		<li class="mobile javascript web-services"><a href="../beta/bookme/">BookMeUp (Book Suggestions App)</a><br />Book recommendation tool for re-introducing serendipitous browsing in the digital environment<br />Download: <a href="./files/bookme.zip">.zip</a> or <a href="https://github.com/jasonclark/BookMeUp">GitHub</a></li>
-		<li class="web-services"><a href="./files/getsemantic/">getSEMantic</a><br />Feed a URL and tool analyzes page to return semantic topics and entities for linked data -> possible use = automated cataloging of web pages<br />Download: <a href="./files/getsemantic.zip">.zip</a> or <a href="https://github.com/jasonclark/get-semantic">GitHub</a></li>
-		<li class="javascript web-services mobile"><a href="./files/html5-mobile-feed/">HTML5 Mobile Feed App</a><br />Teaching prototype that demonstrates RWD principles, semantic HTML5 markup, and localStorage. App allows one to add set of feeds to create browse and search views.
+	<ul id="filter-list">
+		<li class="web-services"><a href="./files/digital-collections-custom-search-api/">Digital Collections (Google Custom Search API)</a><br />App that uses Google Custom Search API to index public web collections -> potentially allows any library (even a small public) to have a search app with facets for its web presence.<br />* From Digital Library Forum (DLF) 2013 session: "<a href="http://www.diglib.org/forums/2013forum/schedule/84-2/">Metadata First: Using Structured Data Markup and the Google Custom Search API to Outsource Your Digital Collection Search Index</a>"<br />Download: <a href="./files/digital-collections-custom-search-api.zip">.zip</a> or <a href="https://github.com/jasonclark/digital-collections-custom-search-api">GitHub</a></li>
+		<li class="search web-services"><a href="./files/youtube-digital-library/">Digital Video Library App (YouTube Data API version 2)</a><br />App that uses YouTube API to create a digital video library -> potentially allows any library (even a small public) to have a digital library for its videos<br />* From Code4Lib Journal article: "<a href="http://journal.code4lib.org/articles/7847">Developing a Digital Video Library with the YouTube Data API</a>"<br />Download: <a href="./files/youtube-digital-library.zip">.zip</a> or <a href="https://github.com/jasonclark/youtube-digital-library">GitHub</a></li>
+		<li class="javascript web-services"><a href="../beta/bookme/">BookMeUp (Book Suggestions App)</a><br />Book recommendation tool for re-introducing serendipitous browsing in the digital environment<br />Download: <a href="./files/bookme.zip">.zip</a> or <a href="https://github.com/jasonclark/BookMeUp">GitHub</a></li>
+		<li class="semantic-web web-services"><a href="./files/getsemantic/">getSEMantic</a><br />Feed a URL and tool analyzes page to return semantic topics and entities for linked data -> possible use = automated cataloging of web pages<br />Download: <a href="./files/getsemantic.zip">.zip</a> or <a href="https://github.com/jasonclark/get-semantic">GitHub</a></li>
+		<li class="javascript web-services"><a href="./files/html5-mobile-feed/">HTML5 Mobile Feed App</a><br />Teaching prototype that demonstrates RWD principles, semantic HTML5 markup, and localStorage. App allows one to add set of feeds to create browse and search views.
 		<br />Download: <a href="./files/html5-mobile-feed.zip">.zip</a> or <a href="https://github.com/jasonclark/html5-mobile-feed">GitHub</a></li>
-		<li class="javascript web-services"><a href="./files/web-speech-api-search-input/">Web Speech API - Speak to Search</a><br />Speech recognition fires a search request<br />Download: <a href="https://gist.github.com/jasonclark/fef8d6afd0d19815f9bd">View Code</a></li>
-		<li class="web-services"><a href="./files/term-extract/">Term Extract: Yahoo Content Analysis API (YQL)</a><br />Paste text to get Content Analysis and Terms<br />Download: <a href="./files/term-extract/code.php">View Code</a></li>
-		<li class="all"><a href="http://www.lib.montana.edu/lc/">Library of Congress (Subject Browse App)</a><br />Download: <a href="./files/lc.sql">.sql</a> or <a href="./files/lc.csv">.csv</a></li>
-		<li class="mobile javascript web-services"><a href="./files/geolocate/">BooksNStuffNearBy: Geolocation App</a><br />Download: <a href="./files/geolocate/code.php">View Code</a></li>
-		<li class="mobile javascript">Mobile Web Templates @ Your Library
+		<li class="javascript search"><a href="./files/web-speech-api-search-input/">Web Speech API - Speak to Search</a><br />Speech recognition fires a search request<br />Download: <a href="https://gist.github.com/jasonclark/fef8d6afd0d19815f9bd">View Code</a></li>
+		<li class="web-services semantic-web"><a href="./files/term-extract/">Term Extract: Yahoo Content Analysis API (YQL)</a><br />Paste text to get Content Analysis and Terms<br />Download: <a href="./files/term-extract/code.php">View Code</a></li>
+		<li class="search"><a href="http://www.lib.montana.edu/lc/">Library of Congress (Subject Browse App)</a><br />Download: <a href="./files/lc.sql">.sql</a> or <a href="./files/lc.csv">.csv</a></li>
+		<li class="javascript web-services"><a href="./files/geolocate/">BooksNStuffNearBy: Geolocation App</a><br />Download: <a href="./files/geolocate/code.php">View Code</a></li>
+		<li class="javascript">Mobile Web Templates @ Your Library
 		<ul>
-		<li class="mobile javascript">
+		<li>
 		Demo: <a href="./files/m/">Mobile Template (custom)</a> | Download: <a href="./files/m.zip">Get file</a><br />
 		Demo: <a href="./files/touch/">Mobile Template (jQtouch)</a> | Download: <a href="./files/touch.zip">Get file</a><br />
 		Demo: <a href="./files/touch-jquery/">Mobile Template (jQuery Mobile)</a> | Download: <a href="./files/touch-jquery.zip">Get file</a>
 		</li>
 		</ul>
 		</li>
-		<li class="mobile javascript widgets"><a href="./files/video-widget/index-youtube.php">YouTube Video Widget (jQuery & PHP)</a><br />Download: <a href="./files/video-widget.zip">Get file</a></li>
+		<li class="javascript"><a href="./files/video-widget/index-youtube.php">YouTube Video Widget (jQuery & PHP)</a><br />Download: <a href="./files/video-widget.zip">Get file</a></li>
 		<li class="web-services">Video Mashups @ the Library<br />
 		<ul>
-		<li class="web-services">Demo: <a href="./files/api/vimeo/">Vimeo</a> | Download: <a href="./files/api-vimeo.zip">Get file</a><br />
+		<li>Demo: <a href="./files/api/vimeo/">Vimeo</a> | Download: <a href="./files/api-vimeo.zip">Get file</a><br />
 		Demo: <a href="./files/api/youtube/">YouTube</a> | Download: <a href="./files/api-youtube.zip">Get file</a><br />
 		From book chapter: <a href="http://mashups.web2learning.net/toc/chapter-15">"Blip.tv and Digital Video Collections in the Library", in <em>Library Mashups</em></a>
 		</li>
@@ -125,21 +87,21 @@ window.onhashchange = function () {
 		</li>
 		<li class="javascript web-services">Demo: <a href="./files/google-maps/">Map locations using Google Maps (API version 3)</a><br />Download: <a href="./files/google-maps/code.php">View Code</a></li>
 		<li class="javascript web-services">Demo: <a href="./files/google-streetview/index.php?name=Montana+State+University&lat=45.672302&lng=-111.048088">Street View Tours using Google Maps (API version 2)</a><br />Download: <a href="./files/google-streetview/code.txt">View Code</a></li>
-		<li class="javascript web-services mobile">Demo: <a href="./files/html5-geo/">HTML5 Geolocation using Google Maps (API version 3)</a><br />Download: <a href="./files/html5-geo/code.txt">View Code</a></li>
-		<li class="mobile javascript web-services widgets"><a href="./files/google-feed-api/">Table of Contents & Mobile Feeds (Google Ajax Feeds API)</a><br />Download: <a href="./files/google-feed-api/code.txt">View Code</a></li>
-		<li class="web-services">Demo: <a href="./files/nytimes-movies/">Search NY Times Movie Reviews (API version 2)</a><br />Download: <a href="./files/nytimes-movies/code.php">View Code</a></li>
-		<li class="web-services">Demo: <a href="./files/nytimes-books/">Query NY Times Best Sellers List (API version 2)</a><br />Download: <a href="./files/nytimes-books/code.php">View Code</a></li>
+		<li class="javascript web-services">Demo: <a href="./files/html5-geo/">HTML5 Geolocation using Google Maps (API version 3)</a><br />Download: <a href="./files/html5-geo/code.txt">View Code</a></li>
+		<li class="search javascript web-services"><a href="./files/google-feed-api/">Table of Contents & Mobile Feeds (Google Ajax Feeds API)</a><br />Download: <a href="./files/google-feed-api/code.txt">View Code</a></li>
+		<li class="search web-services">Demo: <a href="./files/nytimes-movies/">Search NY Times Movie Reviews (API version 2)</a><br />Download: <a href="./files/nytimes-movies/code.php">View Code</a></li>
+		<li class="search web-services">Demo: <a href="./files/nytimes-books/">Query NY Times Best Sellers List (API version 2)</a><br />Download: <a href="./files/nytimes-books/code.php">View Code</a></li>
 		<li class="javascript web-services">Demo: <a href="./files/google-charts/">Visualize Data: Google Charts, Google Analytics API</a><br />Demo only: Props to Alexander Lucas (api.alexl@google.com) for code.</li>
-		<li class="web-services">Demo: <a href="./files/question-point/">AskRef: Search OCLC QuestionPoint API, refine with Worldcat Terminologies API</a><br />Download: <a href="./files/question-point/code.php">View Code</a></li>
+		<li class="search web-services">Demo: <a href="./files/question-point/">AskRef: Search OCLC QuestionPoint API, refine with Worldcat Terminologies API</a><br />Download: <a href="./files/question-point/code.php">View Code</a></li>
 		<li class="javascript web-services">Demo(s): <a href="./files/javascript/">Working with Javascript: Building Responsive Web Apps</a><br />Download: <a href="./files/javascript.zip">Get file</a></li>
 		<li class="web-services">Demo: <a href="./files/itunes-search/">Search iTunes using Google's Ajax Search API</a><br />Download: <a href="./files/itunes-search/code.php">View Code</a></li>
 		<li class="web-services">Demo: <a href="./files/itunes-api/">Search iTunes using iTunes Search API</a><br />Download: <a href="./files/itunes-api/code.php">View Code</a></li>
-		<li class="web-services widgets">Demo: <a href="./files/newyorker-podcast/">New Yorker Fiction Podcast Mashup</a><br />Download: <a href="./files/newyorker-podcast.zip">Get file</a></li>
-		<li class="javascript widgets">Demo: <a href="./files/oembed/">oEmbed: Flickr, Youtube, etc</a><br />Download: <a href="./files/oembed/code.php">View Code</a></li>
-		<li class="javascript widgets">Demo: <a href="./files/bookmarklets/">Browser Add-Ons &amp; Bookmarklets for Library &amp; Web Resources</a><br />Download: <a href="./files/bookmarklets/code.php">View Code</a></li>
-		<li class="widgets">Demo: <a href="http://www.lib.montana.edu/tools/gadgets.php">Google Gadgets @ Your Library</a><br />Download: <a href="./files/gadgets.zip">Get file</a></li>
-		<li class="mobile javascript web-services">Demo: <a href="./files/mobile/">The Portable Library: Mobile Digital Collections with Flickr</a><br />Download: <a href="./files/mobile.zip">Get file</a></li>
-		<li class="widgets">Demo: <a href="./files/tools/">OpenSearch Widgets &amp; Google Gadgets for Libraries</a><br />Download: <a href="./files/micro-app.zip">Get file</a></li>
+		<li class="web-services">Demo: <a href="./files/newyorker-podcast/">New Yorker Fiction Podcast Mashup</a><br />Download: <a href="./files/newyorker-podcast.zip">Get file</a></li>
+		<li class="javascript">Demo: <a href="./files/oembed/">oEmbed: Flickr, Youtube, etc</a><br />Download: <a href="./files/oembed/code.php">View Code</a></li>
+		<li class="javascript">Demo: <a href="./files/bookmarklets/">Browser Add-Ons &amp; Bookmarklets for Library &amp; Web Resources</a><br />Download: <a href="./files/bookmarklets/code.php">View Code</a></li>
+		<li class="search">Demo: <a href="http://www.lib.montana.edu/tools/gadgets.php">Google Gadgets @ Your Library</a><br />Download: <a href="./files/gadgets.zip">Get file</a></li>
+		<li class="javascript web-services">Demo: <a href="./files/mobile/">The Portable Library: Mobile Digital Collections with Flickr</a><br />Download: <a href="./files/mobile.zip">Get file</a></li>
+		<li class="search">Demo: <a href="./files/tools/">OpenSearch Widgets &amp; Google Gadgets for Libraries</a><br />Download: <a href="./files/micro-app.zip">Get file</a></li>
 		<li class="web-services">Demo: <a href="http://etd.lib.montana.edu/etd/view/searches.php">QueryCatcher - Search Term Recorder</a><br />Download: <a href="./files/querycatcher.zip">Get file</a><br />From Code4Lib Journal article: <a href="http://journal.code4lib.org/articles/78">"Making Patron Data Work Harder: User Search Terms as Access Points?"</a></li>
 		<li class="web-services">Demo: <a href="./files/api/lofi/">A "lofiAPI" - RESTful web service to Library Data</a><br />Download: <a href="./files/api-lofi.zip">Get file</a></li>
 		<li class="javascript">Demo: <a href="./files/ajax/show/">Ajax - Show People (HTML)</a><br />Download: <a href="./files/ajax-show.zip">Get file</a></li>
@@ -163,6 +125,61 @@ window.onhashchange = function () {
 include './meta/inc/footer.html';
 ?>
 </div>
+<script>
+var all = document.getElementById('filter-list').getElementsByTagName('li');
+//console.log(all);
+var javascript = document.getElementsByClassName('javascript');
+var search = document.getElementsByClassName('search');
+var semanticWeb = document.getElementsByClassName('semantic-web');
+var webServices = document.getElementsByClassName('web-services');
+//var javascript = document.getElementsByClassName('javascript');
+
+function show(items) {
+	for (var i = 0; i < items.length; i++) {
+		items[i].style.display = 'block';
+	}
+}
+
+function hide(items) {
+	for (var i = 0; i < items.length; i++) {
+		items[i].style.display = 'none';
+        }
+}
+
+function filterItems() {
+	switch (window.location.hash) {
+		case "#javascript":
+			hide(search);
+			hide(semanticWeb);
+			hide(webServices);
+			show(javascript);
+			break;
+		case "#search":
+			hide(javascript);
+			hide(search);
+			hide(semanticWeb);
+			show(search);
+			break;
+		case "#semantic-web":
+			hide(javascript);
+			hide(search);
+			hide(webServices);
+			show(semanticWeb);
+			break;
+		case "#web-services":
+			hide(javascript);
+			hide(search);
+			hide(semanticWeb);
+			show(webServices);
+			break;
+		default:
+			show(all);
+	}
+};
+
+window.onload = filterItems;
+window.onhashchange = filterItems;
+</script>
 <script>
 	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
