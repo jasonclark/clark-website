@@ -1,0 +1,133 @@
+<?php
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//assign value for title of page, limit to 60-70 characters
+$pageTitle = 'Contact - Jason A. Clark';
+//assign value for description of page, limit to 155 charcters
+$pageDescription = 'Contact Jason A. Clark - professor, librarian, author, hacker/developer, #SemanticWeb + metadata geek, husband, and dad';
+//get file last modified date for use in Schema.org date properties
+$pageLastModified = date ('c', getlastmod());
+?>
+<!doctype html>
+<html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $pageTitle; ?></title>
+<meta name="description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:title" content="<?php echo $pageTitle; ?>"/>
+<meta property="og:description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:image" content="https://www.lib.montana.edu/~jason/meta/img/clark-share-default.png"/>
+<meta property="og:url" content="https://www.lib.montana.edu/~jason/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="http://www.jasonclark.info"/>
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+<link rel="canonical" href="<?php echo $protocol.$server.$path.'/'.$fileName; ?>"/>
+<link rel="manifest" href="./manifest.json"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"/>
+<link rel="stylesheet" href="./meta/styles/global.css"/>
+</head>
+<body>
+<div class="app" property="mainContentOfPage">
+<?php 
+include './meta/inc/header.html';
+?>
+<main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
+<div class="content" property="text">
+<section aria-label="main content">
+	<h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
+	<h2>Contact me using any of the methods below.</h2>
+	<p class="center" property="about description">I'm always willing to chat. Feel free to reach out and contact me. The form works. Twitter is good. Email works as well.</p>
+<?php
+//turn on full error reports for development - REMOVE when in production
+//error_reporting(E_ALL);
+
+if (isset($_POST['passField']) && trim($_POST['passField']) != ''):
+?>
+  <h2>Thanks for posting a general inquiry, ROBOT. Please, go die in a fire!</h2>
+<?php
+elseif (isset($_POST['submitCheck']) && $_POST['submitCheck'] == 1):
+
+  $subject = 'Request Library Card';
+  $name = isset($_POST['name']) ? htmlentities(strip_tags($_POST['name'])) : null;
+  $email = isset($_POST['email']) ? htmlentities(strip_tags($_POST['email'])) : null;
+	$birthday = isset($_POST['birthday']) ? htmlentities(strip_tags($_POST['birthday'])) : null;
+
+
+	//declare invalid characters
+	$badCharacters = "#%*&:;^\/|<>{}";
+	//validate name, email, and birthdate fields for invalid characters
+	if (preg_match("/[$badCharacters]/", $_POST['name']) || preg_match("/[$badCharacters]/", $_POST['email']) || preg_match("/[$badCharacters]/", $_POST['birthdate'])) {
+		echo '<h2>These characters are not allowed or are invalid.</h2>'."\n";
+		echo '<p>Return to the <a name="back" id="back" href="'.htmlentities(strip_tags(basename(__FILE__))).'">contact form</a>.</p>';
+		exit();
+	}
+
+        $mailto = 'jaclark@montana.edu';
+	echo '<p>Thanks for signing up for a library card, <strong>'.$name.'</strong>.</p>'."\n";
+	echo '<p>We\'ll be in touch when the card is ready.</p>'."\n";
+
+	// build the email message string
+	$body = "Name:\t$name\nE-mail:\t$email\nBirthday:\t$birthday\n\n";
+	$headers = 'From: '.$email.' '. "\r\n" .
+	'Reply-To: ' .$email.' '. "\r\n" .
+	"$name" . ' is looking to catch up with you. Contact information is below.';
+	mail($mailto, $subject, $body, $headers);
+
+else:
+?>
+<form method="post" action="<?php echo htmlentities(strip_tags(basename(__FILE__))); ?>">
+<input type="hidden" name="submitCheck" value="1" />
+<span id="access">
+  <label for="passField">omit field (bot test):</label>
+  <input id="passField" name="passField" type="text" autofill="off" />
+  <script>(function () { var e = document.getElementById("access"); e.parentNode.removeChild(e); })();</script>
+</span>
+<fieldset>
+  <label for="name">Enter full name:</label>
+  <input title="Enter full name" type="text" name="name" id="name" placeholder="full name" autofocus />
+  <label for="email">Enter email:</label>
+  <input title="Enter email" type="email" name="email" id="email" placeholder="email" />
+  <label for="comment">Enter comment:</label>
+  <input title="Enter comment" type="text" pattern="[a-zA-Z0-9\s]+" name="comment" id="comment" placeholder="comment" />
+  <button type="submit" class="button">Contact</button>
+</fieldset>
+</form>
+<?php
+endif;
+?>
+<p class="center">I'm also active elsewhere on the web and you can feel free to contact me there.</p>
+<ul class="list center none">
+		<li><a href="https://twitter.com/jaclark" title="Twitter - Jason A. Clark" data-pubDate="Sun, 24 Jan 2016 22:52:18 -0700">@jaclark on Twitter</a></li>
+		<li><a href="https://diginit.wordpress.com/" title="Blog - Jason A. Clark" data-pubDate="Sun, 24 Jan 2016 22:52:18 -0700">Blog of Jason A. Clark</a></li>
+		<li><a href="https://www.instagram.com/imjaclark/" title="Instagram - Jason A. Clark" data-pubDate="Sun, 24 Jan 2016 22:52:18 -0700">@imjaclark on Instagram</a></li>
+		<li><a href="https://www.facebook.com/jasclark" title="Facebook - Jason A. Clark" data-pubDate="Sun, 24 Jan 2016 22:52:18 -0700">Jason A. Clark  on Facebook</a></li>
+	</ul>
+</section>
+</div>
+</main>
+<?php 
+include './meta/inc/footer.html';
+?>
+</div>
+<script>
+	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	e.src='https://www.google-analytics.com/analytics.js';
+	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	ga('create','ADD-GOOGLE-ANALYTICS-ID-HERE','auto');ga('send','pageview');
+</script>
+</body>
+</html>
