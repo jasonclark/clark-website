@@ -75,8 +75,8 @@ elseif (isset($_POST['submitCheck']) && $_POST['submitCheck'] == 1):
 	}
 
         $mailto = 'jaclark@montana.edu';
-	echo '<p>Thanks for signing up for a library card, <strong>'.$name.'</strong>.</p>'."\n";
-	echo '<p>We\'ll be in touch when the card is ready.</p>'."\n";
+	echo '<p class="center">Thanks for contacting me, <strong>'.$name.'</strong>.</p>'."\n";
+	echo '<p class="center">I\'ll be in touch as soon as I have the chance.</p>'."\n";
 
 	// build the email message string
 	$body = "Name:\t$name\nE-mail:\t$email\nBirthday:\t$birthday\n\n";
