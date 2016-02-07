@@ -81,10 +81,19 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
   <changefreq>monthly</changefreq>
 </item>
 <item>
+  <title>Search</title>
+  <description>Search page for Jason A. Clark's website</description>
+  <link><?php echo $protocol.$server.$path.'/'; ?>search.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>search.html</guid>
+  <priority>1.0</priority>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
+  <changefreq>monthly</changefreq>
+</item>
+<item>
   <title>Code and Files</title>
   <description>Working code and files created by Jason A. Clark</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>files.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>files.html</guid>
+  <link><?php echo $protocol.$server.$path.'/'; ?>code.html</link>
+  <guid><?php echo $protocol.$server.$path.'/'; ?>code.html</guid>
   <priority>1.0</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
