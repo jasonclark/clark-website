@@ -1,0 +1,134 @@
+<?php
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//assign value for title of page, limit to 60-70 characters
+$pageTitle = 'Metadata Viewer - Jason A. Clark';
+//assign value for description of page, limit to 155 charcters
+$pageDescription = 'Metadata viewer "Easter Egg" shows all metadata associated with a URL passed to the script.';
+//get file last modified date for use in Schema.org date properties
+$pageLastModified = date ('c', getlastmod());
+?>
+<!doctype html>
+<html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $pageTitle; ?></title>
+<meta name="description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:title" content="<?php echo $pageTitle; ?>"/>
+<meta property="og:description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:image" content="https://www.lib.montana.edu/~jason/meta/img/clark-share-default.png"/>
+<meta property="og:url" content="https://www.lib.montana.edu/~jason/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="http://www.jasonclark.info"/>
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+<link rel="canonical" href="<?php echo $protocol.$server.$path.'/'.$fileName; ?>"/>
+<link rel="manifest" href="./manifest.json"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"/>
+<link rel="stylesheet" href="./meta/styles/global.css"/>
+</head>
+<body>
+<div class="app" property="mainContentOfPage">
+<?php 
+include './meta/inc/header.html';
+?>
+<main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
+<div class="content" property="text">
+<section aria-label="main content">
+	<h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
+	<p class="center" property="about description">Metadata viewer "Easter Egg" shows all metadata associated with a URL passed to the script.</p>
+<?php
+//set default value for URL to parse metadata
+$url = isset($_GET['url']) ? htmlentities(strip_tags($_GET['url'])) : 'http://www.lib.montana.edu/~jason/index.html';
+
+//routine to look for all meta tags available at URL
+$ch = curl_init();
+$timeout = 5;
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+$html = curl_exec($ch);
+curl_close($ch);
+
+$doc = new DOMDocument();
+@$doc->loadHTML($html);
+
+/*
+if (!$doc->loadHTML($url)) {
+    foreach (libxml_get_errors() as $error) {
+        print_r($error);
+    }
+    libxml_clear_errors();
+}
+*/
+
+$xpath = new DOMXPath($doc);
+$tags = $xpath->query('//meta');
+?>
+	<p class="center">Metadata for <a title"<?php echo $url; ?>" href="<?php echo $url; ?>"><?php echo $url; ?></a></p>
+	<dl>
+<?php
+foreach ($tags as $tag) {
+		if ($tag->getAttribute('property')) { 
+		?>
+			<dt><?php echo $tag->getAttribute('property'); ?></dt>
+		<?php
+		}
+		if ($tag->getAttribute('name')) { 
+		?>
+                        <dt><?php echo $tag->getAttribute('name'); ?></dt>
+		<?php 
+		}
+		?>
+			<dd><?php echo $tag->getAttribute('content'); ?></dd>
+<?php
+}
+?>
+	</dl>
+<?php
+//will look for all meta tags available at URL
+//$tags = get_meta_tags("$url");
+
+// Notice how the keys are all lowercase now, and
+// how . was replaced by _ in the key.
+/*
+echo '<p><strong>DC.Title:</strong> '.$tags['dc_title'].'</p>'."\n"; 
+echo '<p><strong>DC.Creator.PersonalName:</strong> '.$tags['dc_creator_personalname'].'</p>'."\n";
+echo '<p><strong>DC.Description:</strong> '.$tags['dc_description'].'</p>'."\n";
+echo '<p><strong>DC.Subject:</strong> '.$tags['dc_subject'].'</p>'."\n";
+echo '<p><strong>DC.Date:</strong> '.$tags['dc_date'].'</p>'."\n";
+echo '<p><strong>DC.Type:</strong> '.$tags['dc_type'].'</p>'."\n";
+echo '<p><strong>DC.Format:</strong> '.$tags['dc_format'].'</p>'."\n";
+echo '<p><strong>DC.Language:</strong> '.$tags['dc_language'].'</p>'."\n";
+echo '<p><strong>DC.Identifier:</strong> '.$tags['dc_identifier'].'</p>'."\n"; 
+echo '<p><strong>DC.Date.X-MetadataLastModified:</strong> '.$tags['dc_date_x-metadatalastmodified'].'</p>'."\n";      
+*/
+?>
+</section>
+</div>
+</main>
+<?php 
+include './meta/inc/footer.html';
+?>
+</div>
+<script>
+	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	e.src='https://www.google-analytics.com/analytics.js';
+	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	ga('create','ADD-GOOGLE-ANALYTICS-ID-HERE','auto');ga('send','pageview');
+</script>
+</body>
+</html>
