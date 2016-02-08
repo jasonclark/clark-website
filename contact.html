@@ -64,7 +64,7 @@ if (isset($_POST['passField']) && trim($_POST['passField']) != ''):
 <?php
 elseif (isset($_POST['submitCheck']) && $_POST['submitCheck'] == 1):
 
-  $subject = 'Request Library Card';
+  $subject = 'Contact request from jasonclark.info';
   $name = isset($_POST['name']) ? htmlentities(strip_tags($_POST['name'])) : null;
   $email = isset($_POST['email']) ? htmlentities(strip_tags($_POST['email'])) : null;
   $comment = isset($_POST['comment']) ? htmlentities(strip_tags($_POST['comment'])) : null;
@@ -115,7 +115,6 @@ endif;
 <p class="center">I'm also active elsewhere on the web and you can feel free to contact me there.</p>
 <ul class="list center none">
 		<li><a href="https://twitter.com/jaclark" title="Twitter - Jason A. Clark" data-pubDate="Sun, 24 Jan 2016 22:52:18 -0700">@jaclark on Twitter</a></li>
-		<li><a href="https://diginit.wordpress.com/" title="Blog - Jason A. Clark" data-pubDate="Sun, 24 Jan 2016 22:52:18 -0700">Blog of Jason A. Clark</a></li>
 		<li><a href="https://www.instagram.com/imjaclark/" title="Instagram - Jason A. Clark" data-pubDate="Sun, 24 Jan 2016 22:52:18 -0700">@imjaclark on Instagram</a></li>
 		<li><a href="https://www.facebook.com/jasclark" title="Facebook - Jason A. Clark" data-pubDate="Sun, 24 Jan 2016 22:52:18 -0700">Jason A. Clark  on Facebook</a></li>
 	</ul>
