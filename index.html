@@ -49,11 +49,13 @@ include './meta/inc/header.html';
 	<h1 property="alternativeHeadline name"><?php $titleSection = explode('-',$pageTitle); echo trim($titleSection[0]); ?></h1>
 	<h2><?php $titleSection = explode('-',$pageTitle); echo trim($titleSection[1]); ?></h2>
 	<figure class="center">	
-		<picture>		
+		<a title="View metadata for this page" href="metadata.html" onclick="return !window.open(this.href,'popupwindow','width=600,height=400,scrollbars,resizable');">
+		<picture>
 		<source media="all and (min-width: 50.1em)" srcset="" />
-		<source media="all and (max-width:30.063em)" srcset="" />		
+		<source media="all and (max-width:30.063em)" srcset="" />
 		<img class="feature" property="image" src="meta/img/shelflst.gif" alt="Jason A. Clark - Code, Talks, and Publications" width="350" height="195">
 		</picture>
+		</a>
 	</figure>
 	<p class="center" property="about description">My home on the Web including my working code for sample applications, thoughts, talks, publications, and my curriculum vitae.</p>
 	<!--<p><a class="latest" title="follow @jaclark" href="https://twitter.com/intent/user?user_id=1835821">Recently +</a></p>
@@ -62,7 +64,7 @@ include './meta/inc/header.html';
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </li>
 	</ul>-->
-	<p class="center"><a class="button small" property="sameAs" href="https://twitter.com/jaclark">@jaclark</a> <a class="button small" property="sameAs" href="https://github.com/jasonclark">github</a> <a class="button small" property="isBasedOnUrl" href="./resume.php">curriculum vitae</a></p>
+	<p class="center"><a class="button small" property="sameAs" href="https://twitter.com/jaclark">@jaclark</a> <a class="button small" property="sameAs" href="https://github.com/jasonclark">github</a> <a class="button small" property="isBasedOnUrl" href="resume.html">curriculum vitae</a></p>
 </section>
 </div>
 </main>
