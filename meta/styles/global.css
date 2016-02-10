@@ -107,6 +107,9 @@ fieldset{padding:0;}
 .feature {border:1px solid #eee;}
 .list {padding-left:0;}
 .list li {margin-bottom:1em;}
+.list-inline{list-style-type:none;}
+.list-inline li{display:inline-block;}
+.list-inline li:not(:last-child){border-right:.0725em solid #e5e5e5;margin-right:5px;padding-right:10px;}
 .none{list-style:none;}
 .app {margin:0 auto;}
 header{width:100%;padding:10px 0;height:50px;position:fixed;top:0;left:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#e2e2e0;background-color:#f2f2f0;}
