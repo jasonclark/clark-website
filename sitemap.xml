@@ -45,7 +45,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
   <changefreq>monthly</changefreq>
 </item>
 <item>
-  <title>CV and Resume</title>
+  <title>Resume and CV</title>
   <description>Curriculum vitae and resume for Jason A. Clark</description>
   <link><?php echo $protocol.$server.$path.'/'; ?>resume.html</link>
   <guid><?php echo $protocol.$server.$path.'/'; ?>resume.html</guid>
