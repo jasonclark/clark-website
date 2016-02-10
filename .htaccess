@@ -37,13 +37,13 @@ AddOutputFilterByType DEFLATE "text/css" "text/html" "text/javascript" "text/pla
 
 #redirects and aliases for mapping older files to current files
 #https://httpd.apache.org/docs/current/mod/mod_alias.html#redirect
-Redirect 301 "/home/jason/public_html/about.php" "/home/jason/public_html/about.html"
-Redirect 301 "/home/jason/public_html/contact.php" "/home/jason/public_html/contact.html"
-Redirect 301 "/home/jason/public_html/files.php" "/home/jason/public_html/code.html"
-Redirect 301 "/home/jason/public_html/index.php" "/home/jason/public_html/index.html"
-Redirect 301 "/home/jason/public_html/index.php" "https://www.lib.montana.edu/~jason/"
-Redirect 301 "/home/jason/public_html/metadata.php" "/home/jason/public_html/metadata.html"
-Redirect 301 "/home/jason/public_html/portfolio.php" "/home/jason/public_html/resume.html"
-Redirect 301 "/home/jason/public_html/resume.php" "/home/jason/public_html/resume.html"
-Redirect 301 "/home/jason/public_html/sandbox.php" "/home/jason/public_html/code.html"
+Redirect 301 "/~jason/about.php" "/~jason/about.html"
+Redirect 301 "/~jason/contact.php" "/~jason/contact.html"
+Redirect 301 "/~jason/files.php" "/~jason/code.html"
+Redirect 301 "/~jason/index.php" "/~jason/index.html"
+Redirect 301 "/~jason/index.php" "https://www.lib.montana.edu/~jason/"
+Redirect 301 "/~jason/metadata.php" "/~jason/metadata.html"
+Redirect 301 "/~jason/portfolio.php" "/~jason/resume.html"
+Redirect 301 "/~jason/resume.php" "/~jason/resume.html"
+Redirect 301 "/~jason/sandbox.php" "/~jason/code.html"
 #RedirectMatch 301 "/home/jason/public_html/files/search-ux/(.*).html" "https://www.lib.montana.edu/~jason/files.html"
