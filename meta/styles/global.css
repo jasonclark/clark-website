@@ -60,8 +60,7 @@ abbr[title] {
 	border-bottom-width: 1px;
 	border-bottom-style: dotted;
 }
-b,
-strong {
+b,strong {
 	font-weight: bold;
 }
 dfn {
@@ -74,8 +73,7 @@ mark {
 small {
 	font-size: 80%;
 }
-sub,
-sup {
+sub,sup {
 	font-size: 75%;
 	line-height: 0;
 	position: relative;
@@ -113,10 +111,7 @@ hr {
 pre {
 	overflow: auto;
 }
-code,
-kbd,
-pre,
-samp {
+code,kbd,pre,samp {
 	font-family: monospace, monospace;
 	font-size: 1em;
 }
@@ -334,7 +329,6 @@ header .site-title a {
   margin: 5px 0 0;
   padding: 0 0 0 42px;
 }
-
 header .nav {
   font-size: 1em;
   float: right;
