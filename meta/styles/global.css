@@ -57,33 +57,33 @@ audio:not([controls]) {
   display: none;
 }
 abbr[title] {
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
 }
 b,strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 dfn {
-	font-style: italic;
+  font-style: italic;
 }
 mark {
-	color: rgb(0, 0, 0);
-	background: rgb(255, 255, 0);
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 0);
 }
 small {
-	font-size: 80%;
+  font-size: 80%;
 }
 sub,sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 sup {
-	top: -0.5em;
+  top: -0.5em;
 }
 sub {
-	bottom: -0.25em;
+  bottom: -0.25em;
 }
 h1 {
   font-size: 2em;
@@ -109,11 +109,11 @@ hr {
   margin: 2em auto 1em;
 }
 pre {
-	overflow: auto;
+  overflow: auto;
 }
 code,kbd,pre,samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 time[title],time[title]:active,time[title]:focus {
   cursor: help;
