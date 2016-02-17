@@ -9,7 +9,7 @@ $fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER
 $fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
 
 //assign value for title of page, limit to 60-70 characters
-$pageTitle = '404 Page Not Found - Jason A. Clark';
+$pageTitle = '404: Page Not Found - Jason A. Clark';
 //assign value for description of page, limit to 155 charcters
 $pageDescription = '404 page not found message along with options for recovering from the error on Jason Clark\'s website';
 //get file last modified date for use in Schema.org date properties
@@ -46,7 +46,7 @@ include './meta/inc/header.html';
 <main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#work">
 <div class="content" property="text">
 <section aria-label="main content">
-	<h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
+	<h1 property="alternativeHeadline name"><?php echo strstr($pageTitle, "-", true); ?></h1>
 	<p property="about description">Whoops! The page you're looking for was either moved or was never here in the first place. You can try a <a href="search.html">search</a>, visit my <a href="sitemap.html">sitemap</a>, <a href="contact.html">contact me</a>, or look at my very happy dog.</p>
 	<figure class="center">	
 		<picture>		
@@ -68,7 +68,7 @@ include './meta/inc/footer.html';
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'ADD-GOOGLE-ANALYTICS-ID-HERE', 'auto');
+        ga('create', 'UA-19716241-1', 'auto');
         ga('send', 'pageview');
 </script>
 </body>
