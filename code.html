@@ -18,9 +18,9 @@ $pageLastModified = date ('c', getlastmod());
 <!doctype html>
 <html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title><?php echo $pageTitle; ?></title>
 <meta name="description" content="<?php echo $pageDescription; ?>"/>
 <meta property="og:title" content="<?php echo $pageTitle; ?>"/>
@@ -46,7 +46,7 @@ $pageLastModified = date ('c', getlastmod());
   text-indent: .7em;
   white-space: nowrap;
   overflow: hidden;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/44/Icon_External_Link.svg");
+  background-image: url(./meta/img/icon-external-link.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -203,7 +203,7 @@ window.onhashchange = filterItems;
   	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', 'ADD-GOOGLE-ANALYTICS-ID-HERE', 'auto');
+	ga('create', 'YOUR-GOOGLE-ANALYTICS-ID-HERE', 'auto');
 	ga('send', 'pageview');
 </script>
 </body>
