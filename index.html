@@ -18,9 +18,9 @@ $pageLastModified = date ('c', getlastmod());
 <!doctype html>
 <html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.'/'.$fileName; ?>#page">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title><?php echo $pageTitle; ?></title>
 <meta name="description" content="<?php echo $pageDescription; ?>"/>
 <meta property="og:title" content="<?php echo $pageTitle; ?>"/>
@@ -51,19 +51,13 @@ include './meta/inc/header.html';
 	<figure class="center">	
 		<a title="View metadata for this page" href="metadata.html" onclick="return !window.open(this.href,'popupwindow','width=600,height=400,scrollbars,resizable');">
 		<picture>
-		<source media="all and (min-width: 50.1em)" srcset="" />
-		<source media="all and (max-width:30.063em)" srcset="" />
-		<img class="feature" property="image" src="meta/img/shelflst.gif" alt="Jason A. Clark - Code, Talks, and Publications" width="350" height="195">
+		<source media="all and (min-width: 50.1em)" srcset="meta/img/catalog-card-large.png" />
+		<source media="all and (max-width:30.063em)" srcset="meta/img/catalog-card-small.png" />
+		<img class="feature" property="image" src="meta/img/catalog-card.png" alt="Jason A. Clark - Code, Talks, and Publications" width="350" height="195">
 		</picture>
 		</a>
 	</figure>
 	<p class="center" property="about description">My home on the Web including my working code for sample applications, thoughts, talks, publications, and my curriculum vitae.</p>
-	<!--<p><a class="latest" title="follow @jaclark" href="https://twitter.com/intent/user?user_id=1835821">Recently +</a></p>
-	<ul class="list center none">
-		<li><a class="twitter-timeline" href="https://twitter.com/jaclark" data-widget-id="344685560230723584" data-chrome="noheader nofooter noborders transparent" data-link-color="#59708C" data-aria-polite="assertive" data-tweet-limit="1" width="180" height="150" lang="EN">Tweets by @jaclark</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</li>
-	</ul>-->
 	<p class="center"><a class="button small" property="sameAs" href="https://twitter.com/jaclark">@jaclark</a> <a class="button small" property="sameAs" href="https://github.com/jasonclark">github</a> <a class="button small" property="isBasedOnUrl" href="resume.html">curriculum vitae</a></p>
 </section>
 </div>
