@@ -19,7 +19,7 @@
     <foaf:depiction rdf:resource="http://www.lib.montana.edu/people/meta/img/photos/JasonClark-thumb.jpg"/>
     <foaf:phone rdf:resource="tel:4069946801"/>
     <foaf:workplaceHomepage rdf:resource="http://www.lib.montana.edu"/>
-    <foaf:workInfoHomepage rdf:resource="http://www.lib.montana.edu/people/about.php?id=23"/>
+    <foaf:workInfoHomepage rdf:resource="https://www.lib.montana.edu/people/about/23"/>
     <foaf:schoolHomepage rdf:resource="http://www.wisc.edu/"/>
 	<rdfs:seeAlso rdf:resource="http://orcid.org/0000-0002-3588-6257"/>
 	<owl:sameAs rdf:resource="http://viaf.org/viaf/232895228/"/>
@@ -28,7 +28,7 @@
         <foaf:Person>
             <foaf:name>Scott Young</foaf:name>
             <foaf:mbox_sha1sum>9a66a9bbe67427f587a896a3ea0c9fef0374ecf8</foaf:mbox_sha1sum>
-            <rdfs:seeAlso rdf:resource="http://www.lib.montana.edu/people/about.php?id=99"/>
+            <rdfs:seeAlso rdf:resource="https://www.lib.montana.edu/people/about/99"/>
         </foaf:Person>
     </foaf:knows>
 </foaf:Person>
