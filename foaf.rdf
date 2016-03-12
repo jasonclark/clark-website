@@ -10,7 +10,7 @@
     <foaf:primaryTopic rdf:resource="#me"/>
 </foaf:PersonalProfileDocument>
 <foaf:Person rdf:ID="me">
-    <foaf:name>Jason Clark</foaf:name>
+    <foaf:name>Jason A. Clark</foaf:name>
     <foaf:title>Mr</foaf:title>
     <foaf:givenname>Jason</foaf:givenname>
     <foaf:family_name>Clark</foaf:family_name>
@@ -21,9 +21,11 @@
     <foaf:workplaceHomepage rdf:resource="http://www.lib.montana.edu"/>
     <foaf:workInfoHomepage rdf:resource="https://www.lib.montana.edu/people/about/23"/>
     <foaf:schoolHomepage rdf:resource="http://www.wisc.edu/"/>
-	<rdfs:seeAlso rdf:resource="http://orcid.org/0000-0002-3588-6257"/>
-	<owl:sameAs rdf:resource="http://viaf.org/viaf/232895228/"/>
-	<owl:sameAs rdf:resource="http://id.loc.gov/authorities/names/n2012016641.rdf"/>
+    <owl:sameAs rdf:resource="http://viaf.org/viaf/232895228/"/>
+    <owl:sameAs rdf:resource="http://id.loc.gov/authorities/names/n2012016641.rdf"/>
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0002-3588-6257"/>
+    <rdfs:seeAlso rdf:resource="https://twitter.com/jaclark"/>
+    <rdfs:seeAlso rdf:resource="https://github.com/jasonclark"/>
     <foaf:knows>
         <foaf:Person>
             <foaf:name>Scott Young</foaf:name>
