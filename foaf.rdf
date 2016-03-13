@@ -17,6 +17,7 @@
     <foaf:mbox_sha1sum>f5b7618c83b5ae89503f46afde32f21e8fa39389</foaf:mbox_sha1sum>
     <foaf:homepage rdf:resource="http://www.jasonclark.info"/>
     <foaf:depiction rdf:resource="http://www.lib.montana.edu/people/meta/img/photos/JasonClark-thumb.jpg"/>
+    <foaf:publications rdf:resource="https://www.lib.montana.edu/~jason/resume.html"/>
     <foaf:phone rdf:resource="tel:4069946801"/>
     <foaf:workplaceHomepage rdf:resource="http://www.lib.montana.edu"/>
     <foaf:workInfoHomepage rdf:resource="https://www.lib.montana.edu/people/about/23"/>
