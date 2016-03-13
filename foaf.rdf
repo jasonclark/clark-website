@@ -21,6 +21,12 @@
     <foaf:workplaceHomepage rdf:resource="http://www.lib.montana.edu"/>
     <foaf:workInfoHomepage rdf:resource="https://www.lib.montana.edu/people/about/23"/>
     <foaf:schoolHomepage rdf:resource="http://www.wisc.edu/"/>
+    <foaf:interest rdf:resource="https://www.wikidata.org/wiki/Q515701"/>
+    <foaf:interest rdf:resource="https://www.wikidata.org/wiki/Q165194"/>
+    <foaf:interest rdf:resource="https://www.wikidata.org/wiki/Q386275"/>
+    <foaf:interest rdf:resource="https://www.wikidata.org/wiki/Q54837"/>
+    <foaf:interest rdf:resource="https://www.wikidata.org/wiki/Q11248500"/>
+    <foaf:interest rdf:resource="https://www.wikidata.org/wiki/Q180711"/>
     <owl:sameAs rdf:resource="http://viaf.org/viaf/232895228/"/>
     <owl:sameAs rdf:resource="http://id.loc.gov/authorities/names/n2012016641.rdf"/>
     <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0002-3588-6257"/>
