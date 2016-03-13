@@ -23,6 +23,7 @@
     <foaf:workplaceHomepage rdf:resource="http://www.lib.montana.edu"/>
     <foaf:workInfoHomepage rdf:resource="https://www.lib.montana.edu/people/about/23"/>
     <foaf:schoolHomepage rdf:resource="http://www.wisc.edu/"/>
+    <foaf:based_near rdf:resource="https://dbpedia.org/resource/Montana"/>
     <foaf:interest rdf:resource="https://www.wikidata.org/wiki/Q515701"/>
     <foaf:interest rdf:resource="https://www.wikidata.org/wiki/Q165194"/>
     <foaf:interest rdf:resource="https://www.wikidata.org/wiki/Q386275"/>
