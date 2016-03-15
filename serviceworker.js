@@ -17,7 +17,7 @@
                     '/~jason/meta/img/',
                     '/~jason/meta/inc/',
                     '/',
-                    '/offline.html'
+                    '/~jason/offline.html'
                 ]);
             });
     };
@@ -50,7 +50,7 @@
             event.respondWith(
                 fetch(request)
                     .catch(function () {
-                        return caches.match('/offline.html');
+                        return caches.match('/~jason/offline.html');
                     })
             );
             return;
