@@ -15,6 +15,7 @@
                     '/~jason/meta/styles/global.css',
                     '/~jason/meta/fonts/',
                     '/~jason/meta/img/',
+                    '/~jason/meta/inc/',
                     '/',
                     '/offline.html'
                 ]);
