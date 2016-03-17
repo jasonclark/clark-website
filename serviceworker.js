@@ -91,7 +91,7 @@
                     .catch(function () {
                         return caches.match(request)
                             .then(function (response) {
-                                return response || caches.match('/offline.html');
+                                return response || caches.match('/~jason/offline.html');
                             })
                     })
             );
