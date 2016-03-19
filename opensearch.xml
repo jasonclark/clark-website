@@ -1,8 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
 	<ShortName>ClarkWeb</ShortName>
-	<Description>Jason A. Clark's Website</Description>
-	<Url type="text/html" method="get" template="https://www.lib.montana.edu/~jason/search.html?q={searchTerms}"/>
+	<LongName>Search - Jason A. Clark</LongName>
+	<Description>Search Jason A. Clark's Website</Description>
+	<Url type="text/html" rel="results" template="https://www.lib.montana.edu/~jason/search.html?q={searchTerms}"/>
 	<Image width="16" height="16">https://www.lib.montana.edu/~jason/favicon.ico</Image>
+	<Query role="example" searchTerms="html5" />
+	<Developer>https://github.com/jasonclark</Developer>
+	<Attribution>Search data copyright Jason A. Clark</Attribution>
+	<SyndicationRight>open</SyndicationRight>
+	<Language>en-us</Language>
 	<InputEncoding>UTF-8</InputEncoding>
-	<SearchForm>https://www.lib.montana.edu/~jason/</SearchForm>
 </OpenSearchDescription>
