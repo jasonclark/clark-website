@@ -2,8 +2,11 @@
 #https://httpd.apache.org/docs/current/mod/mod_mime.html#addtype
 #https://httpd.apache.org/docs/current/mod/mod_mime.html#addhandler
 #AddType application/x-httpd-php .html .xml .json
-AddHandler php5-script .html .xml
+AddHandler php5-script .html
 #AddHandler php5-script .html .xml .json
+<FilesMatch "^(sitemap)\.xml$">
+AddHandler php5-script .xml
+</FilesMatch>
 
 #serve all resources labeled as 'text/html' or 'text/plain' with the media type 'charset' parameter set to UTF-8'
 #https://httpd.apache.org/docs/current/mod/core.html#adddefaultcharset
