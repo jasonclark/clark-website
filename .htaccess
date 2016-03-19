@@ -17,6 +17,9 @@ AddDefaultCharset utf-8
 <Files "manifest.json">
 AddType application/manifest+json .json
 </Files>
+<Files "opensearch.xml">
+AddType application/opensearchdescription+xml .xml
+</Files>
 AddType application/atom+xml .atom
 AddType application/json .json
 AddType application/ld+json .jsonld
