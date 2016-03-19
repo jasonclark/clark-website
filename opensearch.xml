@@ -1,0 +1,8 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+	<ShortName>ClarkWeb</ShortName>
+	<Description>Jason A. Clark's Website</Description>
+	<Url type="text/html" method="get" template="https://www.lib.montana.edu/~jason/search.html?q={searchTerms}"/>
+	<Image width="16" height="16">https://www.lib.montana.edu/~jason/favicon.ico</Image>
+	<InputEncoding>UTF-8</InputEncoding>
+	<SearchForm>https://www.lib.montana.edu/~jason/</SearchForm>
+</OpenSearchDescription>
