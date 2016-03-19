@@ -143,7 +143,7 @@ Redirect 301 "/~jason/talks.php" "/~jason/talks.html"
   RewriteCond %{HTTPS} !=on
   #RewriteRule ^(.*)$ https://%{HTTP_HOST}/~jason/$1 [R=301,L]
   #RewriteRule ^(/~jason|index\.html|about\.html|code\.html|talks\.html)$ https://%{HTTP_HOST}/~jason/$1 [R=301,L]
-  RewriteRule ^(index\.html|about\.html|code\.html|talks\.html)$ https://%{HTTP_HOST}/~jason/$1 [R=301,L]
+  RewriteRule ^(index\.html|about\.html|code\.html|contact\.html|search\.html|sitemap\.html|talks\.html)$ https://%{HTTP_HOST}/~jason/$1 [R=301,L]
 
   #remove need to have .html extension in filename
   #RewriteCond %{REQUEST_FILENAME}.html -f
