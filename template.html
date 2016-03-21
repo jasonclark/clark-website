@@ -25,8 +25,8 @@ $pageLastModified = date ('c', getlastmod());
 <meta name="description" content="<?php echo $pageDescription; ?>"/>
 <meta property="og:title" content="<?php echo $pageTitle; ?>"/>
 <meta property="og:description" content="<?php echo $pageDescription; ?>"/>
-<meta property="og:image" content="https://www.lib.montana.edu/~jason/meta/img/clark-share-default.png"/>
-<meta property="og:url" content="https://www.lib.montana.edu/~jason/"/>
+<meta property="og:image" content="<?php echo $protocol.$server.$path; ?>/meta/img/clark-share-default.png"/>
+<meta property="og:url" content="<?php echo $protocol.$server.$path; ?>/"/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -34,8 +34,8 @@ $pageLastModified = date ('c', getlastmod());
 <link rel="apple-touch-icon" type="image/png" href="./meta/img/manifest.png"/>
 <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
 <link rel="canonical" href="<?php echo $protocol.$server.$path.'/'.$fileName; ?>"/>
-<link rel="meta" type="application/rdf+xml" title="FOAF" href="https://www.lib.montana.edu/~jason/foaf.rdf"/>
-<link rel="search" type="application/opensearchdescription+xml" href="https://www.lib.montana.edu/~jason/opensearch.xml" title="Search - Jason A. Clark"/>
+<link rel="meta" type="application/rdf+xml" title="FOAF" href="<?php echo $protocol.$server.$path; ?>/foaf.rdf"/>
+<link rel="search" type="application/opensearchdescription+xml" href="<?php echo $protocol.$server.$path; ?>/opensearch.xml" title="Search - Jason A. Clark"/>
 <link rel="manifest" href="./manifest.json"/>
 <link rel="stylesheet" href="./meta/styles/global.css"/>
 </head>
