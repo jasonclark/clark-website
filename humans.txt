@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jason A. Clark
+    web developer and designer
+    https://twitter.com/jaclark
+
+# THANKS
+
+    Mi familia!
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, Javascript, PHP, Apache Server Configs, and CLI 
