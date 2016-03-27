@@ -6,10 +6,10 @@
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 >
 <foaf:PersonalProfileDocument rdf:about="https://www.lib.montana.edu/~jason/foaf.rdf">
-    <foaf:maker rdf:resource="#me"/>
-    <foaf:primaryTopic rdf:resource="#me"/>
+    <foaf:maker rdf:resource="#jasonclark"/>
+    <foaf:primaryTopic rdf:resource="#jasonclark"/>
 </foaf:PersonalProfileDocument>
-<foaf:Person rdf:ID="me">
+<foaf:Person rdf:ID="jasonclark">
     <foaf:name>Jason A. Clark</foaf:name>
     <foaf:title>Mr</foaf:title>
     <foaf:givenname>Jason</foaf:givenname>
