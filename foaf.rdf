@@ -5,7 +5,7 @@
 	xmlns:foaf="http://xmlns.com/foaf/0.1/"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 >
-<foaf:PersonalProfileDocument rdf:about="">
+<foaf:PersonalProfileDocument rdf:about="https://www.lib.montana.edu/~jason/foaf.rdf">
     <foaf:maker rdf:resource="#me"/>
     <foaf:primaryTopic rdf:resource="#me"/>
 </foaf:PersonalProfileDocument>
