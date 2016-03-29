@@ -4,3 +4,5 @@
 User-agent: *
 Disallow: /meta/
 Disallow: /dev/
+
+Sitemap: https://www.lib.montana.edu/~jason/sitemap.xml
