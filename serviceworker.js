@@ -15,6 +15,7 @@
                     '/~jason/meta/styles/global.css',
                     '/~jason/meta/fonts/',
                     '/~jason/meta/img/catalog-card.png',
+                    '/~jason/meta/img/catalog-card-small.png',
                     '/~jason/meta/img/clark-profile.jpg',
                     '/~jason/index.html',
                     '/~jason/about.html',
