@@ -13,10 +13,12 @@
                 return cache.addAll([
                     '/~jason/meta/scripts/global.js',
                     '/~jason/meta/styles/global.css',
-                    '/~jason/meta/fonts/',
+                    '/~jason/meta/fonts/Open-Sans-700/',
+                    '/~jason/meta/fonts/Open-Sans-regular/',
                     '/~jason/meta/img/catalog-card.png',
                     '/~jason/meta/img/catalog-card-small.png',
                     '/~jason/meta/img/clark-profile.jpg',
+                    '/~jason/meta/img/dog.jpg',
                     '/~jason/404.html',
                     '/~jason/about.html',
                     '/~jason/code.html',
