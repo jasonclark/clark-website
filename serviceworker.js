@@ -13,8 +13,10 @@
                 return cache.addAll([
                     '/~jason/meta/scripts/global.js',
                     '/~jason/meta/styles/global.css',
-                    '/~jason/meta/fonts/Open-Sans-700/',
-                    '/~jason/meta/fonts/Open-Sans-regular/',
+                    '/~jason/meta/fonts/Open-Sans-700/Open-Sans-700.ttf',
+                    '/~jason/meta/fonts/Open-Sans-700/Open-Sans-700.woff',
+                    '/~jason/meta/fonts/Open-Sans-regular/Open-Sans-regular.ttf',
+                    '/~jason/meta/fonts/Open-Sans-regular/Open-Sans-regular.woff',
                     '/~jason/meta/img/catalog-card.png',
                     '/~jason/meta/img/catalog-card-small.png',
                     '/~jason/meta/img/clark-profile.jpg',
