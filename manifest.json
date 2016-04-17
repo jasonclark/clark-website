@@ -1,6 +1,7 @@
 {
 	"default_locale": "en",
 	"lang": "en-US",
+	"dir": "ltr",
 	"background_color": "#f8f8f6",
 	"name": "Jason A. Clark",
 	"short_name": "ClarkWeb",
