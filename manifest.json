@@ -6,6 +6,20 @@
   "name": "Jason A. Clark",
   "short_name": "ClarkWeb",
   "description": "Jason A. Clark's website includes his resume, samples of his projects, working code for sample applications, talks, and publications.",
+  "topic": [
+    {
+      "name": "Semantic Web",
+      "uri": "http://dbpedia.org/resource/Semantic_Web"
+    },
+    {
+      "name": "Web search engine",
+      "uri": "http://yago-knowledge.org/resource/Web_search_engine"
+    },
+    {
+      "name": "Linked data",
+      "uri": "http://id.loc.gov/authorities/subjects/sh2013002090.rdf"
+    }
+  ]
   "developer": {
     "name": "Jason A. Clark",
     "url": "http://www.jasonclark.info"
