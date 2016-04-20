@@ -12,8 +12,8 @@
       "uri": "http://dbpedia.org/resource/Semantic_Web"
     },
     {
-      "name": "User_interface_design",
-      "uri": "http://yago-knowledge.org/resource/User_interface_design"
+      "name": "User interface design",
+      "uri": "http://dbpedia.org/resource/User_interface_design"
     },
     {
       "name": "Linked data",
