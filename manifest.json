@@ -16,6 +16,10 @@
       "uri": "http://dbpedia.org/resource/User_interface_design"
     },
     {
+      "name": "Digital libraries",
+      "uri": "http://id.loc.gov/authorities/subjects/sh95008857.rdf"
+    },
+    {
       "name": "Linked data",
       "uri": "http://id.loc.gov/authorities/subjects/sh2013002090.rdf"
     }
