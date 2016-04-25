@@ -24,6 +24,10 @@
       "uri": "http://id.loc.gov/authorities/subjects/sh96000740.rdf"
     },
     {
+      "name": "Web services",
+      "uri": "http://id.loc.gov/authorities/subjects/sh2003001435.rdf"
+    },
+    {
       "name": "Linked data",
       "uri": "http://id.loc.gov/authorities/subjects/sh2013002090.rdf"
     }
