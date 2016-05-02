@@ -112,6 +112,12 @@ FileETag None
   ExpiresByType application/font-woff2 "access plus 1 month" 
 </IfModule>
 
+#remove the 'X-Powered-By' response header set by some frameworks and server-side languages
+#security measure - its value contains information about them: name, version number, etc.
+<IfModule mod_headers.c>
+  Header unset X-Powered-By
+</IfModule>
+
 #redirect to custom error page(s)
 #http://httpd.apache.org/docs/current/custom-error.html
 ErrorDocument 404 /~jason/404.html
