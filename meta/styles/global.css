@@ -52,6 +52,10 @@ html,body {
 a,a:visited {
   color: #08c;
   text-decoration: none;
+  -webkit-transition: color 1s ease-in; /*safari and chrome */
+  -moz-transition: color 1s ease-in; /* firefox */
+  -o-transition: color 1s ease-in; /* opera */
+  transition: color 1s ease-in;
   word-wrap: break-word;
 }
 a:active,a:focus,a:hover {
