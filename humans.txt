@@ -9,7 +9,7 @@
 # THANKS
     Mi familia!
 
-# TECHNOLOGY COLOPHON
+# SITE
     Language: English
-    Doctype: HTML5
-    IDE: CSS3, HTML5, Javascript, PHP, Apache Server Configs, and CLI 
+    Standards: HTML5, CSS3
+    Components: CSS3, HTML5, Javascript, PHP, Apache Server Configs, and CLI 
