@@ -12,6 +12,10 @@
       "uri": "http://dbpedia.org/resource/Semantic_Web"
     },
     {
+      "name": "Open Web Platform",
+      "uri": "http://dbpedia.org/resource/Open_Web_Platform"
+    },
+    {
       "name": "User interface design",
       "uri": "http://dbpedia.org/resource/User_interface_design"
     },
