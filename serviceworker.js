@@ -18,6 +18,8 @@ function updateStaticCache() {
                 '/~jason/meta/img/catalog-card-small.png',
                 '/~jason/meta/img/clark-profile.jpg',
                 '/~jason/meta/img/dog.jpg',
+                '/~jason/meta/inc/footer.html',
+                '/~jason/meta/inc/header.html',
                 '/~jason/404.html',
                 '/~jason/about.html',
                 '/~jason/code.html',
