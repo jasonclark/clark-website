@@ -41,6 +41,16 @@ $pageLastModified = date ('c', getlastmod());
 <link rel="manifest" href="./manifest.json"/>
 <link rel="stylesheet" href="./meta/styles/global.css"/>
 <style>
+.content [href^="http:"]::after {
+  content: "";
+  display: inline-block;
+  background: url("./meta/img/icon-non-secure.svg");
+  background-size: cover;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.15em;
+  vertical-align: -0.05em;
+}
 .content [href^="http"]:not([href*="montana.edu"])::after {
   content: '(external link)';
   display: inline-block;
