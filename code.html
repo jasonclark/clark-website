@@ -42,14 +42,18 @@ $pageLastModified = date ('c', getlastmod());
 <link rel="stylesheet" href="./meta/styles/global.css"/>
 <style>
 .content [href^="http:"]::after {
-  content: "";
+  content: '(non-secure link)';
   display: inline-block;
-  background: url("./meta/img/icon-non-secure.svg");
-  background-size: cover;
-  width: 1em;
-  height: 1em;
-  margin-left: 0.15em;
-  vertical-align: -0.05em;
+  width: .8em;
+  height: .8em;
+  text-indent: .8em;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url(./meta/img/icon-non-secure-link.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  margin-left: .2em;
 }
 .content [href^="http"]:not([href*="montana.edu"])::after {
   content: '(external link)';
