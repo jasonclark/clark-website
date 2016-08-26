@@ -43,6 +43,13 @@
   "display": "standalone",
   "start_url": "./index.html",
   "scope": "/~jason/",
+  "screenshots": [
+    {
+      "src": "./meta/img/manifest.png",
+      "sizes": "320x220",
+      "type": "image/png"
+    }
+  ],
   "icons": [
     {
       "src": "./meta/img/manifest.png",
