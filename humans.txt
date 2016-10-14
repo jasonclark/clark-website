@@ -12,4 +12,4 @@
 # SITE
     Language: English
     Standards: HTML5, CSS3
-    Components: CSS3, HTML5, Javascript, PHP, Apache Server Configs, and CLI 
+    Components: CSS3, HTML5, Javascript, PHP, Python, Apache Server Configs, and CLI 
