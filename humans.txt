@@ -10,6 +10,7 @@
 /* SITE */
   Language: English
   Last update: 2016-10-12
+  Doctype: HTML5
   Standards: HTML5, CSS3
   Components: CSS3, HTML5, Javascript, PHP, Python, Apache Server Configs, and CLI
 
