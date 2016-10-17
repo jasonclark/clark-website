@@ -6,7 +6,11 @@
   "name": "Jason A. Clark",
   "short_name": "ClarkWeb",
   "description": "Jason A. Clark's website includes his resume, samples of his projects, working code for sample applications, talks, and publications.",
-  "topic": [
+  "related_applications": [
+    {"name": "Github",
+    "uri": "https://github.com/jasonclark/clark-website"}
+  ]  
+"topic": [
     {
       "name": "Semantic Web",
       "uri": "http://dbpedia.org/resource/Semantic_Web"
