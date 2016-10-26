@@ -13,6 +13,7 @@
   Doctype: HTML5
   Standards: HTML5, CSS3
   Components: CSS3, HTML5, Javascript, PHP, Python, Apache Server Configs, and CLI
+  IDE: Vi
   Source: https://github.com/jasonclark/clark-website
 
 /* THANKS */
