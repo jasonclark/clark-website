@@ -9,6 +9,7 @@
 
 /* SITE */
   Language: English
+  Launch date: 2003-06-01  
   Last update: 2016-10-12
   Doctype: HTML5
   Standards: HTML5, CSS3
