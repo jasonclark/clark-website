@@ -4,6 +4,7 @@
 /* AUTHOR  */
   Web developer and designer: Jason A. Clark
   Site: www.jasonclark.info
+  GitHub: https://github.com/jasonclark
   Twitter: @jaclark
   Location: Bozeman, Montana, USA
 
