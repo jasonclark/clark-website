@@ -3,6 +3,7 @@
   "lang": "en-US",
   "dir": "ltr",
   "background_color": "#f8f8f6",
+  "theme_color": "#f8f8f6",
   "name": "Jason A. Clark",
   "short_name": "ClarkWeb",
   "description": "Jason A. Clark's website includes his resume, samples of his projects, working code for sample applications, talks, and publications.",
