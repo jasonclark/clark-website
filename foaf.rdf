@@ -39,6 +39,11 @@
     <rdfs:seeAlso rdf:resource="https://github.com/jasonclark"/>
     <foaf:knows>
         <foaf:Person>
+            <foaf:name>Doralyn Rossmann</foaf:name>
+            <foaf:mbox_sha1sum>9a66a9bbe67427f587a896a3ea0c9fef0374ecf8</foaf:mbox_sha1sum>
+            <rdfs:seeAlso rdf:resource="https://www.lib.montana.edu/people/about/36"/>
+        </foaf:Person>
+        <foaf:Person>
             <foaf:name>Scott Young</foaf:name>
             <foaf:mbox_sha1sum>9a66a9bbe67427f587a896a3ea0c9fef0374ecf8</foaf:mbox_sha1sum>
             <rdfs:seeAlso rdf:resource="https://www.lib.montana.edu/people/about/99"/>
