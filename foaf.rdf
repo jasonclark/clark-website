@@ -39,6 +39,11 @@
     <rdfs:seeAlso rdf:resource="https://github.com/jasonclark"/>
     <foaf:knows>
         <foaf:Person>
+            <foaf:name>Sara Mannheimer</foaf:name>
+            <foaf:mbox_sha1sum>1523e2bbd68a237ae30d40dfca34d7fbf173b7b6</foaf:mbox_sha1sum>
+            <rdfs:seeAlso rdf:resource="https://www.lib.montana.edu/people/about/139"/>
+        </foaf:Person>
+        <foaf:Person>
             <foaf:name>Doralyn Rossmann</foaf:name>
             <foaf:mbox_sha1sum>059151c12b2c3a1083cd9065157a6b1855ed01ef</foaf:mbox_sha1sum>
             <rdfs:seeAlso rdf:resource="https://www.lib.montana.edu/people/about/36"/>
