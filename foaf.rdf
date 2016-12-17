@@ -34,6 +34,7 @@
     <owl:sameAs rdf:resource="http://viaf.org/viaf/232895228/"/>
     <owl:sameAs rdf:resource="http://id.loc.gov/authorities/names/n2012016641.rdf"/>
     <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0002-3588-6257"/>
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0002-3588-6257"/>
     <rdfs:seeAlso rdf:resource="https://scholar.google.com/citations?user=2vZSuAwAAAAJ"/>
     <rdfs:seeAlso rdf:resource="https://twitter.com/jaclark"/>
     <rdfs:seeAlso rdf:resource="https://github.com/jasonclark"/>
