@@ -470,5 +470,13 @@ main .nav a:not(:last-child),footer .nav a:not(:last-child) {
     orphans: 4;
     widows: 3;
   }
+  p, li, pre, figure, blockquote {
+    page-break-inside: avoid;
+  }
+  h1,h2,h3,h4,h5 {
+    page-break-after: avoid;
+  }
+  section {
+    page-break-before: always;
+  }
 }
-
