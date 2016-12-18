@@ -463,3 +463,12 @@ main .nav a:not(:last-child),footer .nav a:not(:last-child) {
     width: 98%;
   }
 }
+/*print views and styles*/
+@media print {
+  @page {
+    margin: 1in 0.5in 0.5in;
+    orphans: 4;
+    widows: 3;
+  }
+}
+
