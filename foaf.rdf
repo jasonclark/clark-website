@@ -45,6 +45,11 @@
             <rdfs:seeAlso rdf:resource="https://www.lib.montana.edu/people/about/31"/>
         </foaf:Person>
         <foaf:Person>
+            <foaf:name>Susan Borda</foaf:name>
+            <foaf:mbox_sha1sum>c582d832305edf5d9cb0b644148896244b91802f</foaf:mbox_sha1sum>
+            <rdfs:seeAlso rdf:resource="https://www.lib.montana.edu/people/about/141"/>
+        </foaf:Person>
+        <foaf:Person>
             <foaf:name>Sara Mannheimer</foaf:name>
             <foaf:mbox_sha1sum>1523e2bbd68a237ae30d40dfca34d7fbf173b7b6</foaf:mbox_sha1sum>
             <rdfs:seeAlso rdf:resource="https://www.lib.montana.edu/people/about/139"/>
