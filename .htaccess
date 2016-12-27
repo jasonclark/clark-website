@@ -21,6 +21,9 @@ AddType application/manifest+json .json
 AddType application/opensearchdescription+xml .xml
 </Files>
 AddType application/atom+xml .atom
+#normalize to standard type for javascript
+#https://tools.ietf.org/html/rfc4329#section-7.2
+AddType application/javascript .js
 AddType application/json .json
 AddType application/ld+json .jsonld
 AddType application/rdf+xml .rdf
