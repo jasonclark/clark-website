@@ -310,6 +310,9 @@ fieldset {
 .circle {
   border-radius: 50%;
 }
+.copyright {
+  font-size: 13px;
+}
 .feature {
   border: 1px solid #eee;
 }
