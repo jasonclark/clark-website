@@ -3,6 +3,7 @@
   <ShortName>ClarkWeb</ShortName>
   <LongName>Search - Jason A. Clark</LongName>
   <Description>Search Jason A. Clark's Website</Description>
+  <Tags>Semantic Web development, digital library development, metadata, data modeling, web services, APIs, search engine optimization, interface design</Tags>
   <Url type="text/html" rel="results" template="https://www.lib.montana.edu/~jason/search.html?q={searchTerms}"/>
   <Image width="16" height="16">https://www.lib.montana.edu/~jason/favicon.ico</Image>
   <Query role="example" searchTerms="html5" />
