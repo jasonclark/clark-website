@@ -139,8 +139,17 @@ FileETag None
 
 #remove the 'X-Powered-By' response header set by some frameworks and server-side languages
 #security measure - its value contains information about them: name, version number, etc.
+#http://httpd.apache.org/docs/current/mod/mod_headers.html
 <IfModule mod_headers.c>
   Header unset X-Powered-By
+</IfModule>
+
+#set content security policy to enable control over resources a page is allowed to load
+#http://httpd.apache.org/docs/current/mod/mod_headers.html
+<IfModule mod_headers.c>
+  #Header set Content-Security-Policy "default-src 'self'; script-src 'self' www.google-analytics.com"
+  Header set X-Content-Type-Options nosniff
+  Header set X-Frame-Options DENY
 </IfModule>
 
 #redirect to custom error page(s)
