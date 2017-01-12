@@ -15,23 +15,7 @@ AddDefaultCharset utf-8
 #serve the following file types with the media type 'charset' parameter set to 'UTF-8'
 #https://httpd.apache.org/docs/current/mod/mod_mime.html#addcharset
 <IfModule mod_mime.c>
-  AddCharset utf-8 
-    .atom \
-    .bbaw \
-    .css \
-    .geojson \
-    .js \
-    .json \
-    .jsonld \
-    .manifest \
-    .rdf \
-    .rss \
-    .topojson \
-    .vtt \
-    .webapp \
-    .webmanifest \
-    .xloc \
-    .xml
+  AddCharset utf-8 .atom .bbaw .css .geojson .js .json .jsonld .manifest .rdf .rss .topojson .vtt .webapp .webmanifest .xloc .xml
 </IfModule>
 
 #serve correct media type (MIME type) for resources
