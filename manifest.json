@@ -75,6 +75,21 @@
       "src": "./meta/img/manifest.png",
       "sizes": "320x220",
       "type": "image/png"
+    },
+    {
+      "src": "./meta/img/manifest-apple-icon.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "./meta/img/manifest-ms-icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "./meta/img/manifest-chrome-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ]
 }
