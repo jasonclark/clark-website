@@ -311,6 +311,10 @@ fieldset {
 .copyright {
   font-size: 13px;
 }
+.current {
+  border-bottom: 3px solid #08c;
+  font-weight: bold;
+}
 .feature {
   border: 1px solid #eee;
 }
