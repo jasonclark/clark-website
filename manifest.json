@@ -63,6 +63,11 @@
   "orientation": "any",
   "start_url": "./index.html",
   "scope": "/~jason/",
+  "serviceworker": {
+    "src": "serviceworker.js",
+    "scope": "/~jason/",
+    "use_cache": false
+  },
   "screenshots": [
     {
       "src": "./meta/img/manifest.png",
