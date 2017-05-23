@@ -66,6 +66,9 @@ a:active,a:focus,a:hover {
 a {
   background-color: transparent;
 }
+a.current:hover {
+  text-decoration: none;
+}
 .site-title a {
   color: #333;
 }
