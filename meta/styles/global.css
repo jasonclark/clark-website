@@ -344,6 +344,9 @@ fieldset {
 .app {
   margin: 0 auto;
 }
+.app img, .app svg {
+  object-fit: contain;
+}
 header {
   width: 100%;
   padding: 10px 0;
