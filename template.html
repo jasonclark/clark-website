@@ -22,10 +22,9 @@ $pageLastModified = date ('c', getlastmod());
 <meta http-equiv="x-ua-compatible" content="ie=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title><?php echo $pageTitle; ?></title>
-<meta name="description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:description" name="description" content="<?php echo $pageDescription; ?>"/>
 <meta name="author" content="Jason A. Clark"/>
 <meta property="og:title" content="<?php echo $pageTitle; ?>"/>
-<meta property="og:description" content="<?php echo $pageDescription; ?>"/>
 <meta property="og:image" content="<?php echo $protocol.$server.$path; ?>/meta/img/clark-share-default.png"/>
 <meta property="og:url" content="<?php echo $protocol.$server.$path; ?>/"/>
 <meta property="og:type" content="website"/>
