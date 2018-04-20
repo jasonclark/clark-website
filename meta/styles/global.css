@@ -12,6 +12,7 @@
     url(../fonts/Open-Sans-regular/Open-Sans-regular.woff) format('woff'),
     url(../fonts/Open-Sans-regular/Open-Sans-regular.ttf) format('truetype'),
     url(../fonts/Open-Sans-regular/Open-Sans-regular.svg#OpenSans) format('svg');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Open Sans';
@@ -25,6 +26,7 @@
     url(../fonts/Open-Sans-700/Open-Sans-700.woff) format('woff'),
     url(../fonts/Open-Sans-700/Open-Sans-700.ttf) format('truetype'),
     url(../fonts/Open-Sans-700/Open-Sans-700.svg#OpenSans) format('svg');
+  font-display: swap;
 }
 html {
   box-sizing: border-box;
