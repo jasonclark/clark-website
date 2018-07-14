@@ -21,7 +21,8 @@
       "url": "https://twitter.com/jaclark"
     }
   ],
-  "topic": [
+  "categories": ["books", "education"],
+  "topics": [
     {
       "name": "Semantic Web",
       "uri": "http://dbpedia.org/resource/Semantic_Web"
