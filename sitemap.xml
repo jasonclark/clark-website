@@ -22,15 +22,15 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title><?php echo $pageTitle; ?></title>
-<link><?php echo $protocol.$server.$path.'/'; ?></link>
+<link><?php echo $protocol.$server.$path; ?></link>
 <description><?php echo $pageDescription; ?></description>
-<atom:link href="<?php echo $protocol.$server.$path.'/'.$fileName; ?>" rel="self" type="application/rss+xml"/>
+<atom:link href="<?php echo $protocol.$server.$path.$fileName; ?>" rel="self" type="application/rss+xml"/>
 <lastBuildDate><?php echo $pageLastModified; ?></lastBuildDate>
 <item>
   <title>Home</title>
   <description>Home page for Jason A. Clark's website</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?></link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?></guid>
+  <link><?php echo $protocol.$server.$path; ?></link>
+  <guid><?php echo $protocol.$server.$path; ?></guid>
   <priority>1.0</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
@@ -38,8 +38,8 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 <item>
   <title>About</title>
   <description>About page for Jason A. Clark's website</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>about.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>about.html</guid>
+  <link><?php echo $protocol.$server.$path; ?>about.html</link>
+  <guid><?php echo $protocol.$server.$path; ?>about.html</guid>
   <priority>1.0</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
@@ -47,8 +47,8 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 <item>
   <title>Resume and CV</title>
   <description>Curriculum vitae and resume for Jason A. Clark</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>resume.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>resume.html</guid>
+  <link><?php echo $protocol.$server.$path; ?>resume.html</link>
+  <guid><?php echo $protocol.$server.$path; ?>resume.html</guid>
   <priority>1.0</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
@@ -56,8 +56,8 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 <item>
   <title>Sitemap</title>
   <description>Sitemap for Jason A. Clark's website</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>sitemap.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>sitemap.html</guid>
+  <link><?php echo $protocol.$server.$path; ?>sitemap.html</link>
+  <guid><?php echo $protocol.$server.$path; ?>sitemap.html</guid>
   <priority>1.0</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
@@ -65,8 +65,8 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 <item>
   <title>Talks and Presentations</title>
   <description>Talks and Presentations given by Jason A. Clark</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>talks.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>talks.html</guid>
+  <link><?php echo $protocol.$server.$path; ?>talks.html</link>
+  <guid><?php echo $protocol.$server.$path; ?>talks.html</guid>
   <priority>1.0</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
@@ -74,8 +74,8 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 <item>
   <title>Contact</title>
   <description>Contact Jason A. Clark</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>contact.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>contact.html</guid>
+  <link><?php echo $protocol.$server.$path; ?>contact.html</link>
+  <guid><?php echo $protocol.$server.$path; ?>contact.html</guid>
   <priority>0.8</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
@@ -83,8 +83,8 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 <item>
   <title>Search</title>
   <description>Search page for Jason A. Clark's website</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>search.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>search.html</guid>
+  <link><?php echo $protocol.$server.$path; ?>search.html</link>
+  <guid><?php echo $protocol.$server.$path; ?>search.html</guid>
   <priority>1.0</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
@@ -92,8 +92,8 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
 <item>
   <title>Code and Files</title>
   <description>Working code and files created by Jason A. Clark</description>
-  <link><?php echo $protocol.$server.$path.'/'; ?>code.html</link>
-  <guid><?php echo $protocol.$server.$path.'/'; ?>code.html</guid>
+  <link><?php echo $protocol.$server.$path; ?>code.html</link>
+  <guid><?php echo $protocol.$server.$path; ?>code.html</guid>
   <priority>1.0</priority>
   <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
   <changefreq>monthly</changefreq>
