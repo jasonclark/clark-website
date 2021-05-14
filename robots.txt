@@ -2,9 +2,9 @@
 
 # Allow crawling of all content
 User-agent: *
-Disallow: /archive/
+# Disallow: /archive/
 Disallow: /dev/
 Disallow: /meta/
-Disallow: /share/
+# Disallow: /share/
 
 Sitemap: https://www.lib.montana.edu/~jason/sitemap.xml
