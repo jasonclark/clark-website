@@ -63,10 +63,10 @@
   "display": "standalone",
   "orientation": "any",
   "start_url": "./index.html",
-  "scope": "/~jason/",
+  "scope": "/",
   "serviceworker": {
     "src": "serviceworker.js",
-    "scope": "/~jason/",
+    "scope": "/",
     "use_cache": false
   },
   "screenshots": [

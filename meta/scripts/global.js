@@ -11,14 +11,20 @@ for (let i = 0; i < navLinks.length; i++) {
 navLinks[active].className = "current";
 
 // register the service-worker
-if (navigator.serviceWorker) {
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('serviceworker.js', {
-    scope: '/~jason/'
+    scope: '/'
   }).then(function(reg) {
     // registration worked
     console.log('Registration succeeded. Scope is ' + reg.scope);
   }).catch(function(error) {
     // registration failed
     console.log('Registration failed with ' + error);
+  });
+  // set command to activate trimCaches function in serviceworker
+  window.addEventListener('load', function() {
+    if (navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+    }
   });
 };
