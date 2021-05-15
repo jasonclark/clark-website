@@ -1,0 +1,219 @@
+<?php
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//assign value for title of page, limit to 60-70 characters
+$pageTitle = 'Search - Jason A. Clark';
+//assign value for description of page, limit to 155 charcters
+$pageDescription = 'Search page for website of Jason A. Clark searches primary pages, code, and web properties.';
+//get file last modified date for use in Schema.org date properties
+$pageLastModified = date ('c', getlastmod());
+?>
+<!doctype html>
+<html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.$fileName; ?>#page">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title><?php echo $pageTitle; ?></title>
+<meta name="description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:title" content="<?php echo $pageTitle; ?>"/>
+<meta property="og:description" content="<?php echo $pageDescription; ?>"/>
+<meta property="og:image" content="<?php echo $protocol.$server.$path; ?>meta/img/clark-share-default.png"/>
+<meta property="og:url" content="<?php echo $protocol.$server; ?>"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="<?php echo $protocol.$server; ?>"/>
+<link rel="apple-touch-icon" type="image/png" href="./meta/img/manifest.png"/>
+<link rel="icon" type="image/x-icon" href="./favicon.ico"/>
+<link rel="canonical" href="<?php echo $protocol.$server.$path.$fileName; ?>"/>
+<link rel="meta" type="application/rdf+xml" title="FOAF" href="<?php echo $protocol.$server.$path; ?>foaf.rdf"/>
+<link rel="search" type="application/opensearchdescription+xml" href="<?php echo $protocol.$server.$path; ?>opensearch.xml" title="Search - Jason A. Clark"/>
+<link rel="manifest" href="./manifest.json"/>
+<link rel="stylesheet" href="./meta/styles/global.css"/>
+<style>
+form{text-align:center;}
+input.search{width:75%;max-width:59.375em/*based on 16px browser default font size*/;}
+label{position:absolute;overflow:hidden;clip: rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0;} 
+.result {overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto;}
+.filter, .sort, .result-info {color:#888;font-size:.85em;}
+.sort {color:#888;font-size:.85em;}
+.pages {margin:.625em 0 0 0;padding:0;}
+.pages li {display:inline;margin:0 1rem;}
+.pages > :first-child {margin-left:0;}
+.pages > :last-child {margin-right:0;}
+.previous,.next {padding:.25rem .5rem;border:1px solid #207cca;border-radius:.25rem;font-size:.8em;}
+.previous:before {content: "\000AB\ ";}
+.next:after {content:" \000BB\ ";}
+@media all and (max-width:30.063em) {
+	input.search{width:95%;}
+	.button{display:block;margin:auto;}
+}
+</style>
+</head>
+<body id="search" typeof="SearchResultsPage" resource="<?php echo $protocol.$server.$path.$fileName; ?>#search">
+<div class="app" property="mainContentOfPage">
+<?php 
+include './meta/inc/header.html';
+?>
+<main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.$fileName; ?>#work">
+<div class="content" property="text">
+<section aria-label="main content">
+	<h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
+	<p class="center" property="about description">Search across primary pages, code, and web properties.</p>
+<?php
+// Set default value for query
+$q = isset($_GET['q']) ? urlencode(strip_tags(trim($_GET['q']))) : null;
+
+// Set default value for API format
+$form = isset($_GET['form']) ? htmlentities(strip_tags($_GET['form'])) : 'json';
+
+// Set default value for page length (number of records to display per page)
+$limit = isset($_GET['limit']) ? strip_tags((int)$_GET['limit']) : '10';
+
+// Set default value for page start index
+$start = isset($_GET['start']) ? strip_tags((int)$_GET['start']) : '1';
+
+// Set default value for facet browse
+$facet = isset($_GET['facet']) ? htmlentities(strip_tags($_GET['facet'])) : null;
+
+// Set default value for results sorting
+$sort = isset($_GET['sort']) ? htmlentities(strip_tags($_GET['sort'])) : null;
+
+// Set API version for Google Custom Search API
+$v = isset($_GET['v']) ? strip_tags((int)$_GET['v']) : 'v1';
+
+// Set user API key for Google Custom Search API
+$key = isset($_GET['key']) ? $_GET['key'] : 'ADD-YOUR-GOOGLE-API-KEY';
+
+// Set user ID for Google custom search engine
+$id = isset($_GET['id']) ? $_GET['id'] : 'ADD-YOUR-GOOGLE-PROGRAMMABLE-SEARCH-ENGINE-ID';
+?>
+	<form role="search" method="get" action="search.html">
+		<label for="q">Enter search query:</label>		
+		<input class="search" type="text" name="q" id="q" tabindex="1" placeholder="Search..." value="<?php if (!is_null($q)) { echo urldecode($q); } ?>" required />
+		<input class="button" type="submit" value="Search" />
+	</form>	
+<?php
+	if (!is_null($q)) {
+	// Process query
+
+	// Set URL for the Google Custom Search API call
+	//$url = "https://www.googleapis.com/customsearch/$v?key=$key&cx=$id&alt=$form".(is_null($sort) ? "" : "&sort=$sort")."&num=$limit&start=$start&prettyprint=true&q=$q".(is_null($facet) ? "" : "&hq=$facet");
+
+        $url = "https://www.googleapis.com/customsearch/$v/siterestrict?key=$key&cx=$id&alt=$form".(is_null($sort) ? "" : "&sort=$sort")."&num=$limit&start=$start&prettyprint=true&q=$q".(is_null($facet) ? "" : "&hq=$facet");
+
+	// View source to see raw API call - REMOVE from production code
+	echo '<!--' . $url . '-->';
+
+	// Build request and send to Google Ajax Search API
+	$request = file_get_contents($url);
+
+    	if ($request === FALSE) {
+		// API call failed, display message to user
+		echo '<p><strong>It looks like we can\'t communicate with the API at the moment.</strong></p>'."\n";
+		exit();
+    	}
+
+    	// Decode json object(s) out of response from Google Ajax Search API
+	$result = json_decode($request, true);
+
+    	// Get values in json data for number of search results returned
+	$totalItems = isset($_GET['totalItems']) ?  strip_tags((int)$_GET['totalItems']) : $result['queries']['request'][0]['totalResults'];
+
+	if ($totalItems <= 0) {
+	// Empty results, display message to user
+		echo '<p><strong>Sorry, there were no results</strong></p>'."\n";
+	} else {
+		// Make sure some results were returned, show results as html with result numbering and pagination
+?>
+	<p class="sort" role="toolbar" aria-label="sorting options" aria-controls="sortable">
+	<span class="sort-heading">Sort:</span>
+	<a href="./search.html?q=<?php echo $q; ?>">Relevance</a> or <a href="./search.html?sort=date&amp;q=<?php echo $q; ?>">Date</a> 
+	| 
+	<span class="category-heading">Category:</span>
+	<a href="./search.html?q=<?php echo urlencode($_GET['q']); ?>">All</a>
+<?php
+	foreach ($result['context']['facets'] as $key) { 
+?>
+	<a href="./search.html?q=<?php echo urlencode($_GET['q']).'&amp;facet='.$key[0]['label']; ?>"><?php echo ucfirst($key[0]['anchor']); ?></a>
+<?php
+	}
+?>
+	</p>
+	<p class="result"><strong><?php echo '"'.urldecode($q).'"'; ?></strong> (About <?php echo $totalItems; ?> results)</p>
+		<ul class="result" id="sortable">
+<?php
+			foreach ($result['items'] as $item) {
+				$link = rawurldecode($item['link']);
+?>
+			<li>
+			<a href="<?php echo $link; ?>"><?php echo $item['htmlTitle']; ?></a>
+			<br />
+			<span class="result-info">
+			<?php echo $item['htmlSnippet']; ?>
+			<?php //echo 'id: '.$item['cacheId']; ?>
+			<br />
+			<?php echo $item['htmlFormattedUrl']; ?>
+			</span>
+			</li>
+<?php
+			}
+?>
+		</ul>
+<?php
+		// Calculate new start value for "previous" link
+		$previous = ($start > 1) ? ($start - $limit) : null;
+		$previous = (!is_null($previous) && ($previous < 1)) ? 1 : $previous;
+
+		// Calculate new start value for "next" link
+		$next = (($start + $limit) <= $totalItems) ? ($start + $limit) : null;
+		if ($next >= 100) { $next = null; }
+
+		// Display previous and next links if applicable
+		if (!is_null($previous) || !is_null($next)) {
+?>
+		<ul class="pages">
+<?php
+			if (!is_null($previous)) {
+?>
+			<li><a class="previous" href="./search.html?q=<?php echo urlencode($_GET['q']);?><?php if (!is_null($facet)) echo '&amp;facet=' . $facet;?>&amp;totalItems=<?php echo $totalItems; ?>&amp;start=<?php echo $previous; ?>">Previous</a></li>
+
+<?php
+			}
+			if (!is_null($next)) {
+?>
+			<li><a class="next" href="./search.html?q=<?php echo urlencode($_GET['q']);?><?php if (!is_null($facet)) echo '&amp;facet=' . $facet;?>&amp;totalItems=<?php echo $totalItems; ?>&amp;start=<?php echo $next; ?>">Next</a></li>
+<?php
+			}
+?>
+		</ul>
+<?php
+			}
+		} // End else -- $totalItems <= 0
+        } // End (!is_null($q))
+?>
+</section>
+</div>
+</main>
+<?php 
+include './meta/inc/footer.html';
+?>
+</div>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-19716241-1', 'auto');
+        ga('send', 'pageview');
+</script>
+</body>
+</html>
