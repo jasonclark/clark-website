@@ -23,10 +23,6 @@ const offlinePages = [
 const staticAssets = [
   '/meta/scripts/global.js',
   '/meta/styles/global.css',
-  '/meta/fonts/Open-Sans-700/Open-Sans-700.ttf',
-  '/meta/fonts/Open-Sans-700/Open-Sans-700.woff',
-  '/meta/fonts/Open-Sans-regular/Open-Sans-regular.ttf',
-  '/meta/fonts/Open-Sans-regular/Open-Sans-regular.woff',
   '/meta/img/catalog-card.png',
   '/meta/img/catalog-card-small.png',
   '/meta/img/clark-profile.jpg',
