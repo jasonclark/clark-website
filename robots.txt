@@ -4,7 +4,7 @@
 User-agent: *
 # Disallow: /archive/
 Disallow: /dev/
-Disallow: /meta/
+# Disallow: /meta/
 Disallow: /files/youtube-digital-library/
 # Disallow: /share/
 
