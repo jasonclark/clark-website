@@ -5,6 +5,7 @@ User-agent: *
 # Disallow: /archive/
 Disallow: /dev/
 Disallow: /meta/
+Disallow: /files/youtube-digital-library/
 # Disallow: /share/
 
-Sitemap: https://www.lib.montana.edu/~jason/sitemap.xml
+Sitemap: https://www.jasonclark.info/sitemap.xml
