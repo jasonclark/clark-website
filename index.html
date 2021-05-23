@@ -19,7 +19,6 @@ $pageLastModified = date ('c', getlastmod());
 <html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.$fileName; ?>#page">
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="x-ua-compatible" content="ie=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title><?php echo $pageTitle; ?></title>
 <meta name="description" content="<?php echo $pageDescription; ?>"/>
@@ -33,6 +32,35 @@ $pageLastModified = date ('c', getlastmod());
 <meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="<?php echo $protocol.$server; ?>"/>
+<meta name="dc.title" content="Jason A. Clark's Website"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#title"/>
+<meta name="dc.creator" content="https://www.wikidata.org/wiki/Q51905950"/> 
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#creator"/>
+<meta name="dc.creator.personalName" content="Clark, Jason A."/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#creator"/>
+<meta name="dc.subject" content="resume"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#subject"/>
+<meta name="dc.subject" content="semantic web"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#subject"/>
+<meta name="dc.subject" content="metadata"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#subject"/>
+<meta name="dc.subject" content="librarian"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#subject"/>
+<meta name="dc.description" content="Jason A. Clark's home page includes his resume, samples of his projects, working code for sample applications, professional associations, and publications."/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#description"/>
+<meta name="dc.date" scheme="ISO8601" content="2003-05-15"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#date"/>
+<meta name="dc.type" content="Text.Homepage.Personal"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#type"/>
+<meta name="dc.format" scheme="IMT" content="text/html"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#format"/>
+<link rel="schema.imt" href="http://sunsite.auc.dk/RFC/rfc/rfc2046.html"/>
+<meta name="dc.identifier" content="https://www.jasonclark.info"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#identifier"/>
+<meta name="dc.language" scheme="ISO639-1" content="en"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#language"/>
+<meta name="dc.date.x-MetadataLastModified" scheme="ISO8601" content="2021-05-22"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#date"/>
 <link rel="preconnect" href="//www.google-analytics.com" crossorigin/>
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin/>
 <link rel="apple-touch-icon" type="image/png" href="./meta/img/manifest.png"/>

@@ -19,7 +19,6 @@ $pageLastModified = date ('c', getlastmod());
 <html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.$fileName; ?>#page">
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="x-ua-compatible" content="ie=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title><?php echo $pageTitle; ?></title>
 <meta name="description" content="<?php echo $pageDescription; ?>"/>
@@ -31,6 +30,36 @@ $pageLastModified = date ('c', getlastmod());
 <meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="<?php echo $protocol.$server; ?>"/>
+<!--embedded DublinCore metadata -->
+<meta name="dc.title" content="Jason A. Clark's Website"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#title"/>
+<meta name="dc.creator" content="https://www.wikidata.org/wiki/Q51905950"/> 
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#creator"/>
+<meta name="dc.creator.personalName" content="Clark, Jason A."/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#creator"/>
+<meta name="dc.subject" content="resume"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#subject"/>
+<meta name="dc.subject" content="semantic web"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#subject"/>
+<meta name="dc.subject" content="metadata"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#subject"/>
+<meta name="dc.subject" content="librarian"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#subject"/>
+<meta name="dc.description" content="Jason A. Clark's home page includes his resume, samples of his projects, working code for sample applications, professional associations, and publications."/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#description"/>
+<meta name="dc.date" scheme="ISO8601" content="2003-05-15"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#date"/>
+<meta name="dc.type" content="Text.Homepage.Personal"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#type"/>
+<meta name="dc.format" scheme="IMT" content="text/html"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#format"/>
+<link rel="schema.imt" href="http://sunsite.auc.dk/RFC/rfc/rfc2046.html"/>
+<meta name="dc.identifier" content="https://www.jasonclark.info"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#identifier"/>
+<meta name="dc.language" scheme="ISO639-1" content="en"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#language"/>
+<meta name="dc.date.x-MetadataLastModified" scheme="ISO8601" content="2021-05-22"/>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements#date"/>
 <link rel="apple-touch-icon" type="image/png" href="./meta/img/manifest.png"/>
 <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
 <link rel="canonical" href="<?php echo $protocol.$server.$path.$fileName; ?>"/>
@@ -54,7 +83,7 @@ include './meta/inc/header.html';
 	<p class="center" property="about description">Metadata viewer "Easter Egg" shows all metadata associated with a URL passed to the script.</p>
 <?php
 //set default value for URL to parse metadata
-$url = isset($_GET['url']) ? htmlentities(strip_tags($_GET['url'])) : 'http://www.lib.montana.edu/~jason/';
+$url = isset($_GET['url']) ? htmlentities(strip_tags($_GET['url'])) : 'https://www.jasonclark.info/';
 
 //routine to look for all meta tags available at URL
 $ch = curl_init();
@@ -64,6 +93,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 $html = curl_exec($ch);
 curl_close($ch);
+
+//$html = file_get_contents($url);
 
 $doc = new DOMDocument();
 @$doc->loadHTML($html);
@@ -108,6 +139,7 @@ foreach ($tags as $tag) {
 // how . was replaced by _ in the key.
 /*
 echo '<p><strong>DC.Title:</strong> '.$tags['dc_title'].'</p>'."\n"; 
+echo '<p><strong>DC.Creator</strong> '.$tags['dc_creator'].'</p>'."\n";
 echo '<p><strong>DC.Creator.PersonalName:</strong> '.$tags['dc_creator_personalname'].'</p>'."\n";
 echo '<p><strong>DC.Description:</strong> '.$tags['dc_description'].'</p>'."\n";
 echo '<p><strong>DC.Subject:</strong> '.$tags['dc_subject'].'</p>'."\n";
@@ -116,7 +148,7 @@ echo '<p><strong>DC.Type:</strong> '.$tags['dc_type'].'</p>'."\n";
 echo '<p><strong>DC.Format:</strong> '.$tags['dc_format'].'</p>'."\n";
 echo '<p><strong>DC.Language:</strong> '.$tags['dc_language'].'</p>'."\n";
 echo '<p><strong>DC.Identifier:</strong> '.$tags['dc_identifier'].'</p>'."\n"; 
-echo '<p><strong>DC.Date.X-MetadataLastModified:</strong> '.$tags['dc_date_x-metadatalastmodified'].'</p>'."\n";      
+echo '<p><strong>DC.Date.X-MetadataLastModified:</strong> '.$tags['dc_date_x-metadatalastmodified'].'</p>'."\n";
 */
 ?>
 </section>

@@ -19,7 +19,6 @@ $pageLastModified = date ('c', getlastmod());
 <html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.$fileName; ?>#page">
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="x-ua-compatible" content="ie=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title><?php echo $pageTitle; ?></title>
 <meta name="description" content="<?php echo $pageDescription; ?>"/>
@@ -91,10 +90,10 @@ $sort = isset($_GET['sort']) ? htmlentities(strip_tags($_GET['sort'])) : null;
 $v = isset($_GET['v']) ? strip_tags((int)$_GET['v']) : 'v1';
 
 // Set user API key for Google Custom Search API
-$key = isset($_GET['key']) ? $_GET['key'] : 'ADD-YOUR-GOOGLE-API-KEY';
+$key = isset($_GET['key']) ? $_GET['key'] : 'AIzaSyCR2Ko1P3wRdsgzlGAuTTGLVDhfF_rvFHo';
 
 // Set user ID for Google custom search engine
-$id = isset($_GET['id']) ? $_GET['id'] : 'ADD-YOUR-GOOGLE-PROGRAMMABLE-SEARCH-ENGINE-ID';
+$id = isset($_GET['id']) ? $_GET['id'] : 'be5d5e891688b0481';
 ?>
 	<form role="search" method="get" action="search.html">
 		<label for="q">Enter search query:</label>		
