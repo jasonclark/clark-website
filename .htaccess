@@ -122,6 +122,13 @@ FileETag None
   Header unset X-Powered-By
 </IfModule>
 
+#Sending the Permissions Policy HTTP response header to opt your site out of FLoC.
+#Permissions Policy is a new header that allows a site to control which features and APIs can be used in the browser.
+#http://httpd.apache.org/docs/current/mod/mod_headers.html
+<IfModule mod_headers.c>
+  Header always set Permissions-Policy: interest-cohort=()
+</IfModule>
+
 #set content security policy to enable control over resources a page is allowed to load
 #http://httpd.apache.org/docs/current/mod/mod_headers.html
 <IfModule mod_headers.c>
