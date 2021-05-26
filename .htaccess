@@ -169,12 +169,17 @@ Redirect 301 "/~jason/talks.php" "/~jason/talks.html"
   RewriteCond %{ENV:REDIRECT_STATUS} 200
   RewriteRule .* - [L]
 
+  #Redirect Non-www to www URLs -> jasonclark.info to www.jasonclark.info
+  #helps set canonical URLs and avoiding duplicate content in search engine indexes
+  RewriteCond %{HTTP_HOST} ^jasonclark.info [NC]
+  RewriteRule ^(.*)$ https://www.jasonclark.info/$1 [R=301,L]
+
   #redirect from the `http://` to the `https://` version of the URL.
   #https://wiki.apache.org/httpd/RewriteHTTPToHTTPS
   RewriteCond %{HTTPS} !=on
   #RewriteRule ^(.*)$ https://%{HTTP_HOST}/~jason/$1 [R=301,L]
   #RewriteRule ^(/~jason|index\.html|about\.html|code\.html|talks\.html)$ https://%{HTTP_HOST}/~jason/$1 [R=301,L]
-  RewriteRule ^(index\.html|about\.html|code\.html|contact\.html|search\.html|sitemap\.html|talks\.html)$ https://%{HTTP_HOST}/~jason/$1 [R=301,L]
+  RewriteRule ^(index\.html|about\.html|code\.html|contact\.html|search\.html|sitemap\.html|talks\.html)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
   #remove need to have .html extension in filename
   #RewriteCond %{REQUEST_FILENAME}.html -f
