@@ -1,0 +1,147 @@
+<?php
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//assign value for title of page, limit to 60-70 characters
+$pageTitle = 'Thoughts - Jason A. Clark';
+//assign value for description of page, limit to 155 characters
+$pageDescription = 'A microblog of thoughts, writings, and musings from Jason A. Clark';
+//get file last modified date for use in Schema.org date properties
+$pageLastModified = date ('c', getlastmod());
+?>
+<!doctype html>
+<html lang="en-US" id="page" prefix="og: http://ogp.me/ns#" vocab="http://schema.org/" typeof="WebPage" resource="<?php echo $protocol.$server.$path.$fileName; ?>#page">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title><?php echo $pageTitle; ?></title>
+<meta property="og:description" name="description" content="<?php echo $pageDescription; ?>"/>
+<meta name="author" content="Jason A. Clark"/>
+<meta property="og:title" content="<?php echo $pageTitle; ?>"/>
+<meta property="og:image" content="<?php echo $protocol.$server.$path; ?>meta/img/clark-share-default.png"/>
+<meta property="og:url" content="<?php echo $protocol.$server; ?>"/>
+<meta property="og:type" content="website"/>
+<meta property="og:see_also" content="<?php echo $protocol.$server.$path; ?>about.html"/>
+<meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="<?php echo $protocol.$server; ?>"/>
+<base href="<?php echo $protocol.$server.$path; ?>"/>
+<link rel="preconnect" href="//www.google-analytics.com" crossorigin/>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin/>
+<link rel="apple-touch-icon" type="image/png" href="./meta/img/manifest.png"/>
+<link rel="icon" type="image/x-icon" href="./favicon.ico"/>
+<link rel="canonical" href="https://www.jasonclark.info/<?php echo $fileName; ?>"/>
+<link rel="author" href="<?php echo $protocol.$server.$path; ?>humans.txt"/>
+<link rel="meta" type="application/rdf+xml" title="FOAF" href="<?php echo $protocol.$server.$path; ?>foaf.rdf"/>
+<link rel="search" type="application/opensearchdescription+xml" href="<?php echo $protocol.$server.$path; ?>opensearch.xml" title="Search - Jason A. Clark"/>
+<meta http-equiv="x-dns-prefetch-control" content="on"/>
+<link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="ClarkWeb"/>
+<link rel="manifest" href="./manifest.json"/>
+<link rel="stylesheet" href="./meta/styles/global.css" media="print" onload="this.media='all'"/>
+<style>
+article[typeof=Article] {padding:20px;border:0 solid #ddd;border-bottom-width:1px;}
+time[property=datePublished] {font-size:.8em;color:#666;margin-bottom:0;}
+h2[property=headline] {color:#0173BA;font-size:1.3em;margin:0;padding:0;text-align:left;}
+@media all and (max-width:30.063em) {
+  article[typeof=Article] {padding:10px;}
+  article[typeof=Article] img {width:100%;}
+  article[typeof=Article] figure[data-provider] {position:relative;width:100%;overflow:hidden;padding-top:75%; /* 4:3 Aspect Ratio */}
+  article[typeof=Article] figure iframe {position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%;border:none;}
+}
+</style>
+</head>
+<body>
+<div class="app" property="mainContentOfPage">
+<?php 
+include './meta/inc/header.html';
+?>
+<main id="work" role="main" property="mainEntity" typeof="CreativeWork" resource="<?php echo $protocol.$server.$path.$fileName; ?>#work">
+<div class="content" property="text">
+<section aria-label="main content" role="feed">
+  <h1 property="alternativeHeadline name"><?php echo $pageTitle; ?></h1>
+  <p class="center" property="about description">Some occasional thoughts, writings, and musings from me. Photos, things I learned, half-baked ideas...</p>
+<?php
+// Set default value for query
+$site = isset($_GET['q']) ? htmlentities(strip_tags(trim($_GET['site']))) : 'clarkjason.tumblr.com';
+
+// Set default value for type of Tumblr post
+$type = isset($_GET['type']) ? htmlentities(strip_tags($_GET['type'])) : null;
+
+// Set default value for page length (number of posts to display per page)
+$limit = isset($_GET['limit']) ? strip_tags((int)$_GET['limit']) : '15';
+
+// Set id for Tumblr post to retreive
+$id = isset($_GET['id']) ? strip_tags((int)$_GET['id']) : null;
+
+// Set API version for Tumblr API
+$v = isset($_GET['v']) ? strip_tags((int)$_GET['v']) : 'v2';
+
+// Set user API key for Tumblr API
+$key = isset($_GET['key']) ? $_GET['key'] : 'b76asPIsFIYr3YP4mFk7YPFRgYISvtW6ldCdWAdq5qaM1tzQdr';
+
+if (!is_null($site)) {
+// Process query
+
+$service_url = 'https://api.tumblr.com/v2/blog/clarkjason.tumblr.com/posts';
+$params = array(
+  'limit' => $limit,
+  'api_key' => $key);
+$url = $service_url . '?' . http_build_query($params);
+// View source to see raw API call - REMOVE from production code
+echo '<!--' . $url . '-->';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$response = json_decode(curl_exec($ch), true);
+//echo '<pre>'.var_dump($response).'</pre>';
+curl_close($ch);
+?>
+<?php
+if (!isset($response['response']['posts']) || empty($response['response']['posts'])) {
+?>
+  <p>Is that made up? That sounds made up. We couldn't find any posts.</p>
+<?php
+} else {
+  foreach ($response['response']['posts'] as $item) {
+?>
+  <article typeof="Article">
+<?php
+  $date = isset($item['date']) ? $item['date'] : 'No date available.';
+?>
+  <time datetime="<?php echo $date; ?>" property="datePublished"><?php echo $date; ?></time>
+<?php
+  $title = isset($item['title']) ? $item['title'] : 'No title available.';
+?>
+  <h2 property="headline"><?php echo $title; ?></h2>
+<?php
+  $content = isset($item['body']) ? $item['body'] : 'No content available.';
+?>
+  <div property="articleBody"><?php echo $content; ?></div>
+  </article> 
+<?php
+  }// End foreach loop
+}// End if/else check for empty resultset
+?>
+  <p class="center"><a class="button small" property="sameAs" href="https://twitter.com/jaclark">@jaclark</a> <a class="button small" property="sameAs" href="https://github.com/jasonclark">github</a> <a class="button small" property="isBasedOnUrl" href="./resume.html">curriculum vitae</a></p>
+
+<?php
+} // End (!is_null($q))
+?>
+</section>
+</div>
+</main>
+<?php 
+include './meta/inc/footer.html';
+?>
+</div>
+<script async defer src="https://scripts.withcabin.com/hello.js"></script>
+</body>
+</html>
