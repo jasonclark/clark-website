@@ -72,6 +72,15 @@ echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
   <changefreq>monthly</changefreq>
 </item>
 <item>
+  <title>Thoughts and Writings</title>
+  <description>Thoughts, writings, and musings by Jason A. Clark</description>
+  <link><?php echo $protocol.$server.$path; ?>thoughts.html</link>
+  <guid><?php echo $protocol.$server.$path; ?>thoughts.html</guid>
+  <priority>1.0</priority>
+  <pubDate><?php echo date ('r', getlastmod()); ?></pubDate>
+  <changefreq>monthly</changefreq>
+</item>
+<item>
   <title>Contact</title>
   <description>Contact Jason A. Clark</description>
   <link><?php echo $protocol.$server.$path; ?>contact.html</link>

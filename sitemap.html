@@ -63,7 +63,7 @@ $data = simplexml_load_file($request);
 foreach ($data->channel->item as $entry) {
 	$title = htmlentities($entry->title);
 	$description = $entry->description;
-        $link = $entry->link;
+    $link = $entry->link;
 	$pubDate = $entry->pubDate;
 	if (!preg_match("/sitemap/i", $title)) {
 ?>

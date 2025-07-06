@@ -41,6 +41,12 @@
   <changefreq>monthly</changefreq>
 </url>
 <url>
+  <loc>https://www.jasonclark.info/thoughts.html</loc>
+  <priority>1.0</priority>
+  <lastmod>2025-07-06T10:38:43+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
   <loc>https://www.jasonclark.info/sitemap.html</loc>
   <priority>1.0</priority>
   <lastmod>2015-07-31T13:34:12+00:00</lastmod>
