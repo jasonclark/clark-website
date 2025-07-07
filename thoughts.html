@@ -85,7 +85,7 @@ $id = isset($_GET['id']) ? strip_tags((int)$_GET['id']) : null;
 $v = isset($_GET['v']) ? strip_tags((int)$_GET['v']) : 'v2';
 
 // Set user API key for Tumblr API
-$key = isset($_GET['key']) ? $_GET['key'] : 'b76asPIsFIYr3YP4mFk7YPFRgYISvtW6ldCdWAdq5qaM1tzQdr';
+$key = isset($_GET['key']) ? $_GET['key'] : 'ADD-API-KEY-HERE';
 
 if (!is_null($site)) {
 // Process query
@@ -95,8 +95,8 @@ $params = array(
   'limit' => $limit,
   'api_key' => $key);
 $url = $service_url . '?' . http_build_query($params);
-// View source to see raw API call - REMOVE from production code
-echo '<!--' . $url . '-->';
+// View source to see raw API call - REMOVE or Comment from production code
+// echo '<!--' . $url . '-->';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
