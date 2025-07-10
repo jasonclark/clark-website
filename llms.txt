@@ -1,0 +1,24 @@
+# Jason A. Clark's Website
+
+> Jason A. Clark's website includes his working code for sample applications, talks, publications, and his curriculum vitae.
+
+## About and Sitemap
+- [Jason A. Clark - Thoughts, Code, Talks, and Publications](https://www.jasonclark.info/index.html): Jason A. Clark's website includes his working code for sample applications, talks, publications, and his curriculum vitae.
+- [About - Jason A. Clark](https://www.jasonclark.info/about.html): About Jason A. Clark - professor, librarian, author, hacker/developer, #SemanticWeb + metadata geek, husband, and dad
+- [Sitemap - Jason A. Clark](https://www.jasonclark.info/sitemap.html): Sitemap for website of Jason A. Clark lists primary pages and web properties.
+
+## Code and Resources
+- [Code and Files - Jason A. Clark](https://www.jasonclark.info/code.html): A collection of sample apps, working code, and associated files available from Jason A. Clark available for download and use under the MIT License
+
+## Talks and Presentations
+- [Talks and Workshops - Jason A. Clark](https://www.jasonclark.info/talks.html): List of talks, workshops, and presentations from Jason A. Clark
+
+## Publications and CV
+- [Résumé and CV - Jason A. Clark](https://www.jasonclark.info/resume.html): Jason A. Clark's Resume and Curriculum Vitae including his education, qualifications, and job experience
+
+## Thoughts and Writings
+- [Thoughts - Jason A. Clark](https://www.jasonclark.info/thoughts.html): A microblog of thoughts, writings, and musings from Jason A. Clark
+
+## Optional
+- [Search - Jason A. Clark](https://www.jasonclark.info/search.html): Search page for website of Jason A. Clark searches primary pages, code, and web properties.
+- [Metadata Viewer - Jason A. Clark](https://www.jasonclark.info/metadata.html): Metadata viewer
